@@ -1,0 +1,9 @@
+/node_modules
+package-lock.json
+yarn.lock
+/wp-admin
+/wp-includes
+*
+!wp-content/themes/bildungslandschaften-theme
+!wp-content/plugins/bildungslandschaften-block
+!.gitignore
