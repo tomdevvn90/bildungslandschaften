@@ -1,0 +1,21 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.text-center {
+  text-align: center; }
+
+.fancy-card-block {
+  min-height: 1100px; }
+  .fancy-card-block .fancy-cards-wrap .fancy-card-item {
+    -webkit-transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px));
+        -ms-transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px));
+            transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px)); }

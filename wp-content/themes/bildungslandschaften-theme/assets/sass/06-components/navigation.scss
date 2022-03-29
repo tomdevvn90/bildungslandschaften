@@ -1,0 +1,452 @@
+// Navigation
+
+@keyframes closemenubtn {
+  from {
+    transform: translateX(200px) rotate(360deg);
+    -webkit-transform: translateX(200px) rotate(360deg);
+    -moz-transform: translateX(200px) rotate(360deg);
+    -ms-transform: translateX(200px) rotate(360deg);
+    -o-transform: translateX(200px) rotate(360deg);
+  }
+  to {
+    transform: translateX(0px) rotate(0deg);
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -moz-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    -o-transform: translateX(0px) rotate(0deg);
+  }
+}
+
+// Close button animation for when a custom logo is present.
+@keyframes bildungslandschaften-close-button-transition {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.resp_menu_dark {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+  cursor: pointer;
+
+  .primary-navigation-open & {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.navigation-wrap {
+  .menu-container-wrap {
+    max-width: 660px;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    height: calc(100% - var(--global--admin-bar--height));
+    position: fixed;
+    top: var(--global--admin-bar--height);
+    right: 0;
+    background-color: #FFFFFF;
+    border: 1px solid var(--dark);
+    z-index: 9999;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.8s cubic-bezier(0.9, 0, 0.1, 1);
+    will-change: transform;
+
+    .menu_header, .menu_footer, .primary-menu-container {
+      padding: 30px 50px 60px 60px;
+    }
+
+    .menu_header {
+      display: flex;
+      justify-content: flex-end;
+
+      .close_menu_btn {
+        width: 63px;
+        height: 63px;
+        border: 1px solid var(--dark);
+        border-radius: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' viewBox='0 0 63 63'%3E%3Cpath fill='none' stroke='%23272727' stroke-linecap='round' stroke-linejoin='round' d='m23.4 39.1 16.2-16.2m-16.2 0 16.2 16.2' class='st0'/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 63px;
+        cursor: pointer;
+        transform: translateX(200px) rotate(360deg);
+        transition: transform 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+      }
+    }
+
+    // Mobile menu closed
+     .primary-menu-container {
+      opacity: 0;
+      transform: translateX(200px);
+      transition: all 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+      transition-delay: .3s;
+    }
+
+    .menu_footer {
+      padding-top: 50px;
+      border-top: 2px solid var(--dark, black);
+      text-align: center;
+
+      nav {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .secondary-navigation, .socials-navigation {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+        transition-delay: .5s;
+      }
+
+      .socials-navigation {
+        transition-delay: .8s;
+      }
+    }
+
+    // Mobile menu open
+    .primary-navigation-open & {
+      pointer-events: all;
+      transform: none;
+
+      .close_menu_btn {
+        transition-delay: 0.2s;
+        transform: none;
+        animation: closemenubtn 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+        animation-delay: 0.2s;
+        transition: transform 0.25s cubic-bezier(0.8, 0, 0.2, 1);
+
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
+
+      .primary-menu-container,
+      .secondary-navigation, .socials-navigation {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    // Menu list wrapper
+    > .primary-navigation .menu-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      max-width: none;
+      padding-left: 0;
+      position: relative;
+
+      @include media(mobile-only) {
+        padding-bottom: 100px;
+
+        ul {
+          padding-left: 0;
+        }
+      }
+
+      li {
+        display: block;
+        position: relative;
+        width: 100%;
+
+        @include media(mobile) {
+          margin: 0;
+          width: inherit;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      // Sub-menu buttons
+      .sub-menu-toggle {
+        display: flex;
+        height: calc(2 * var(--primary-nav--padding) + 1.15em + 1px);
+        width: 44px;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: currentColor;
+        border: none;
+
+        &:focus {
+          outline: 2px solid var(--wp--style--color--link, var(--global--color-primary));
+        }
+
+        @include media(mobile-only) {
+          display: none;
+        }
+
+        .icon-plus,
+        .icon-minus {
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-top: -1px;
+          }
+        }
+
+        .icon-minus {
+          display: none;
+        }
+
+        // When the sub-menu is open, display the minus icon
+        &[aria-expanded="true"] {
+
+          .icon-minus {
+            display: flex;
+          }
+
+          .icon-plus {
+            display: none;
+          }
+        }
+      }
+
+      // Sub-menus Flyout
+      > li > .sub-menu {
+
+        position: relative;
+
+        @include media(mobile) {
+          left: 0;
+          margin: 0;
+          min-width: max-content;
+          position: absolute;
+          top: 100%;
+          padding-top: 3px;
+          transition: all 0.5s ease;
+          z-index: 88888;
+
+          &:before,
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            top: -10px;
+            left: var(--global--spacing-horizontal);
+            border-style: solid;
+            border-color: var(--primary-nav--border-color) transparent;
+            border-width: 0 7px 10px 7px;
+          }
+
+          &:after {
+            top: -9px;
+            border-color: var(--global--color-background) transparent;
+          }
+
+          li {
+            background: var(--global--color-background);
+          }
+
+          &.submenu-reposition-left {
+
+            /* rtl:ignore */
+            left: 0;
+
+            /* rtl:ignore */
+            right: auto;
+
+            &:before,
+            &:after {
+
+              /* rtl:ignore */
+              left: var(--global--spacing-horizontal);
+
+              /* rtl:ignore */
+              right: auto;
+            }
+          }
+
+          &.submenu-reposition-right {
+
+            /* rtl:ignore */
+            right: 0;
+
+            /* rtl:ignore */
+            left: auto;
+
+            &:before,
+            &:after {
+
+              /* rtl:ignore */
+              left: auto;
+
+              /* rtl:ignore */
+              right: var(--global--spacing-horizontal);
+            }
+          }
+        }
+      }
+    }
+
+    // Top-level Item Link Colors
+    .primary-menu > .menu-item:hover > a {
+      color: var(--primary-nav--color-link-hover);
+    }
+
+    // Menu Item Link
+    a {
+      display: block;
+      font-family: var(--primary-nav--font-family-mobile);
+      font-size: var(--primary-nav--font-size-mobile);
+      font-weight: var(--primary-nav--font-weight);
+      padding: var(--primary-nav--padding) 0;
+      text-decoration: none;
+
+      @include media(mobile) {
+        display: block;
+        font-family: var(--primary-nav--font-family);
+        font-size: var(--primary-nav--font-size);
+        font-weight: var(--primary-nav--font-weight);
+      }
+
+      + svg {
+        fill: var(--primary-nav--color-text);
+      }
+
+      &:hover,
+      &:link,
+      &:visited {
+        color: var(--primary-nav--color-link-hover);
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
+
+      &:focus {
+        position: relative;
+        z-index: 99999; // Ensure focus styles appear above absolute positioned elements
+        outline-offset: 0;
+        text-decoration-thickness: 2px;
+      }
+    }
+
+    .current-menu-item > a:first-child,
+    .current_page_item > a:first-child {
+      text-decoration: underline;
+      text-decoration-style: solid;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+      }
+    }
+
+    // Sub-menu depth indicators + text styles
+    .sub-menu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-left: var(--primary-nav--padding);
+      border: 1px solid var(--primary-nav--border-color);
+
+      .sub-menu {
+        border: none;
+      }
+
+      // Sub-menu items om wide screens.
+      @include media(mobile) {
+
+        // For nested sub-menus, don't duplicate the padding
+        > .menu-item > .sub-menu {
+          padding: 0;
+        }
+      }
+
+      .menu-item {
+
+        @include media(mobile-only) {
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+        }
+
+        > a {
+          padding: calc(1.25 * var(--primary-nav--padding)) var(--primary-nav--padding);
+          display: block;
+          font-size: var(--primary-nav--font-size-sub-menu-mobile);
+          font-style: var(--primary-nav--font-style-sub-menu-mobile);
+
+          @include media(mobile) {
+            font-size: var(--primary-nav--font-size-sub-menu);
+            font-style: var(--primary-nav--font-style);
+          }
+        }
+      }
+    }
+
+    // Show top-level sub-menu indicators above mobile-breakpoint-only
+    .menu-item-has-children {
+
+      > .svg-icon {
+        display: none;
+      }
+
+      @include media(mobile) {
+
+        > .svg-icon {
+          display: inline-block;
+          height: 100%;
+        }
+
+        .sub-menu .svg-icon {
+          display: none;
+        }
+      }
+
+    }
+
+    .menu-item-description {
+      display: block;
+      clear: both;
+      font-size: var(--global--font-size-xs);
+      text-transform: none;
+      line-height: 1.7;
+
+      > span {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Keep the menu pinned to the top when the menu is open.
+@include media(mobile-only) {
+
+  .lock-scrolling .site {
+    position: fixed;
+    max-width: 100%;
+    width: 100%;
+  }
+}

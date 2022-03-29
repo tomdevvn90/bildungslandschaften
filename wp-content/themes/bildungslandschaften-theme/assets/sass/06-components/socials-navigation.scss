@@ -1,0 +1,24 @@
+.socials-wrap {
+  .socials-navigation {
+    > ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        a {
+          padding: 5px;
+          display: inline-flex;
+
+          > svg {
+            width: 36px;
+            height: auto;
+          }
+
+          > span {
+          }
+        }
+      }
+    }
+  }
+}

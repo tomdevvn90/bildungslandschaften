@@ -1,0 +1,46 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+
+@import "~bootstrap-scss/functions";
+@import "~bootstrap-scss/variables";
+@import "~bootstrap-scss/mixins";
+
+//Fonts
+// Colors.
+
+@function em($pixels, $context: 16) {
+  @return #{$pixels / $context}em;
+}
+
+@mixin placeholder-style($color) {
+  /* WebKit, Edge */
+  &::-webkit-input-placeholder {
+	color: $color;
+  }
+  /* Firefox 4-18 */
+  &:-moz-placeholder {
+	color: $color;
+	opacity: 1;
+  }
+  /* Firefox 19+ */
+  &::-moz-placeholder {
+	color: $color;
+	opacity: 1;
+  }
+  /* IE 10-11 */
+  &:-ms-input-placeholder {
+	color: $color;
+  }
+  /* Edge */
+  &::-ms-input-placeholder {
+	color: $color;
+  }
+  /* MODERN BROWSER */
+  &::placeholder {
+	color: $color;
+  }
+}

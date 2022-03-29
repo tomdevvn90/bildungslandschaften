@@ -1,0 +1,175 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.fancy-card-block {
+  .fancy-cards-wrap {
+	position: relative;
+	margin-top: 50px;
+	counter-reset: card-item;
+
+	.fancy-card-item {
+	  transform: translate(0px, 0px);
+	  transform: translate(calc(120px * var(--item) - 120px), calc(150px * var(--item) - 150px));
+
+	  pointer-events: all;
+	  opacity: 1;
+	  width: 550px;
+	  height: 400px;
+	  cursor: pointer;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  will-change: transform;
+	  transition: 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+
+	  //&:not(:first-child) {
+	  //transform: translate(150px, -280px);
+	  //}
+
+	  .base-bg {
+		background-color: var(--card-item-color);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: background-color 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+		border: 1px solid var(--dark);
+	  }
+
+	  .info {
+		transform: translate(20px, -20px);
+		width: 100%;
+		height: 100%;
+		background-color: var(--global--color-background);
+		//background-color: var(--grey);
+		border: 1px solid var(--dark);
+		padding: 30px;
+		transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+		display: flex;
+		flex-direction: column;
+
+		&:before {
+		  content: '';
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  background: white;
+		  z-index: -1;
+		  top: 0;
+		  left: 0;
+		  transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+		}
+
+		.card-header {
+		  display: flex;
+		  align-items: flex-start;
+		  justify-content: space-between;
+		  margin-bottom: 30px;
+
+		  .name {
+			flex: 1;
+			padding-right: 10px;
+		  }
+
+		  .num {
+			flex: 0 0 60px;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			background: var(--card-item-color);
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			color: var(--dark);
+			border: 1px solid var(--dark);
+			transition: .5s;
+
+			&:after {
+			  counter-increment: card-item;
+			  content: counter(card-item);
+			}
+		  }
+		}
+
+		.card-content {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  height: 100%;
+		  transition: .5s opacity;
+
+		  .thumb {
+			text-align: center;
+		  }
+
+		  .text {
+			display: none;
+		  }
+		}
+	  }
+
+	  &:hover {
+		z-index: 5;
+
+		.info {
+		  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+		  transform: translate(20px, -20px) scale(1.01);
+		}
+	  }
+
+	  &.__active {
+		.info .card-content {
+
+		  .thumb {
+			flex: 1;
+		  }
+
+		  .text {
+			display: block;
+			flex: 2;
+			padding-left: 30px;
+		  }
+		}
+	  }
+	}
+
+	&.__hover {
+	  .fancy-card-item {
+		pointer-events: none;
+		//--card-item-color: transparent !important;
+
+		.base-bg,
+		.info:before,
+		.info .card-header .num {
+		  background-color: transparent;
+		}
+
+		.card-content {
+		  opacity: 0;
+		  visibility: hidden;
+		}
+
+		&:hover {
+		  pointer-events: all;
+
+		  .base-bg,
+		  .info .card-header .num {
+			background-color: var(--card-item-color);
+		  }
+
+		  .info {
+			background-color: white;
+		  }
+
+		  .card-content {
+			opacity: 1;
+			visibility: visible;
+		  }
+		}
+	  }
+	}
+  }
+}

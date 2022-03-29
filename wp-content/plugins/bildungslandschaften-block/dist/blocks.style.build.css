@@ -1,0 +1,163 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.fancy-card-block .fancy-cards-wrap {
+  position: relative;
+  margin-top: 50px;
+  counter-reset: card-item; }
+  .fancy-card-block .fancy-cards-wrap .fancy-card-item {
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    -webkit-transform: translate(calc(120px * var(--item) - 120px), calc(150px * var(--item) - 150px));
+        -ms-transform: translate(calc(120px * var(--item) - 120px), calc(150px * var(--item) - 150px));
+            transform: translate(calc(120px * var(--item) - 120px), calc(150px * var(--item) - 150px));
+    pointer-events: all;
+    opacity: 1;
+    width: 550px;
+    height: 400px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    -webkit-transition: 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+    -o-transition: 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+    transition: 0.5s cubic-bezier(0, 0.5, 0.2, 1); }
+    .fancy-card-block .fancy-cards-wrap .fancy-card-item .base-bg {
+      background-color: var(--card-item-color);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transition: background-color 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+      -o-transition: background-color 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+      transition: background-color 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+      border: 1px solid var(--dark); }
+    .fancy-card-block .fancy-cards-wrap .fancy-card-item .info {
+      -webkit-transform: translate(20px, -20px);
+          -ms-transform: translate(20px, -20px);
+              transform: translate(20px, -20px);
+      width: 100%;
+      height: 100%;
+      background-color: var(--global--color-background);
+      border: 1px solid var(--dark);
+      padding: 30px;
+      -webkit-transition: background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+      transition: background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+      -o-transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+      transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+      transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .fancy-card-block .fancy-cards-wrap .fancy-card-item .info:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: white;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        -webkit-transition: background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+        transition: background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+        -o-transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+        transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+        transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), -webkit-transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1); }
+      .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-header {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: start;
+            align-items: flex-start;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+        margin-bottom: 30px; }
+        .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-header .name {
+          -ms-flex: 1;
+              flex: 1;
+          padding-right: 10px; }
+        .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-header .num {
+          -ms-flex: 0 0 60px;
+              flex: 0 0 60px;
+          width: 60px;
+          height: 60px;
+          display: -ms-flexbox;
+          display: flex;
+          background: var(--card-item-color);
+          -ms-flex-align: center;
+              align-items: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+          border-radius: 50%;
+          color: var(--dark);
+          border: 1px solid var(--dark);
+          -webkit-transition: .5s;
+          -o-transition: .5s;
+          transition: .5s; }
+          .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-header .num:after {
+            counter-increment: card-item;
+            content: counter(card-item); }
+      .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-content {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        height: 100%;
+        -webkit-transition: .5s opacity;
+        -o-transition: .5s opacity;
+        transition: .5s opacity; }
+        .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-content .thumb {
+          text-align: center; }
+        .fancy-card-block .fancy-cards-wrap .fancy-card-item .info .card-content .text {
+          display: none; }
+    .fancy-card-block .fancy-cards-wrap .fancy-card-item:hover {
+      z-index: 5; }
+      .fancy-card-block .fancy-cards-wrap .fancy-card-item:hover .info {
+        -webkit-transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+        transition: -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+        -o-transition: transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 8), -webkit-transform 0.5s cubic-bezier(0, 0, 0.2, 8);
+        -webkit-transform: translate(20px, -20px) scale(1.01);
+            -ms-transform: translate(20px, -20px) scale(1.01);
+                transform: translate(20px, -20px) scale(1.01); }
+    .fancy-card-block .fancy-cards-wrap .fancy-card-item.__active .info .card-content .thumb {
+      -ms-flex: 1;
+          flex: 1; }
+    .fancy-card-block .fancy-cards-wrap .fancy-card-item.__active .info .card-content .text {
+      display: block;
+      -ms-flex: 2;
+          flex: 2;
+      padding-left: 30px; }
+  .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item {
+    pointer-events: none; }
+    .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item .base-bg,
+    .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item .info:before,
+    .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item .info .card-header .num {
+      background-color: transparent; }
+    .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item .card-content {
+      opacity: 0;
+      visibility: hidden; }
+    .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item:hover {
+      pointer-events: all; }
+      .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item:hover .base-bg,
+      .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item:hover .info .card-header .num {
+        background-color: var(--card-item-color); }
+      .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item:hover .info {
+        background-color: white; }
+      .fancy-card-block .fancy-cards-wrap.__hover .fancy-card-item:hover .card-content {
+        opacity: 1;
+        visibility: visible; }

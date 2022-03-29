@@ -1,0 +1,25 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.text-center {
+  text-align: center;
+}
+
+.fancy-card-block {
+  min-height: 1100px;
+  .fancy-cards-wrap {
+	.fancy-card-item {
+	  //transform: translate(0px, 0px);
+	  //transform: translate(calc(80px * var(--item) - 80px), calc(250px - (250px * var(--item))));
+	  //position: relative;
+	  transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px));
+	  //
+	  //&:first-child {
+		//transform: translate(0px, 0px);
+	  //}
+	}
+  }
+}
