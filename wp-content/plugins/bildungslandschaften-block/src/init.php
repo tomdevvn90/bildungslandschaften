@@ -54,7 +54,7 @@ function bildungslandschaften_block_cgb_block_assets() { // phpcs:ignore
 	);
 
 	wp_enqueue_script( 'bil-plugin', plugins_url( 'assets/js/functions.min.js', dirname( __FILE__ ) ),
-		array( 'jquery'), '1.0.0', true );
+		array( 'jquery' ), '1.0.0', true );
 	wp_localize_script( 'bil-plugin', 'cgbGlobal', [
 		'pluginDirPath' => plugin_dir_path( __DIR__ ),
 		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),

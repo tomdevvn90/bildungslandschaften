@@ -1,0 +1,10 @@
+.my-block.block-gap {
+  height: var(--size-default);
+
+  @include media-breakpoint-down('md') {
+	height: var(--size-tablet);
+  }
+  @include media-breakpoint-down('sm') {
+	height: var(--size-mobile);
+  }
+}

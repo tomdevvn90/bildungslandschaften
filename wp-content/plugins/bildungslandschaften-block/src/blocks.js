@@ -9,4 +9,10 @@
  * Webpack is compiling as the input file.
  */
 
-import './blocks/fancy-card-block';
+import './custom-style';
+import './blocks/gap';
+import './blocks/bild-fancy-card-block';
+import './blocks/bild-heading-stroke-block';
+import './blocks/bild-video-block';
+import './blocks/bild-button-block';
+import './blocks/bild-map-selector-block';

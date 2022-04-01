@@ -1,0 +1,19 @@
+.bild-block--buttons {
+  //display: flex;
+  //flex-wrap: wrap;
+  //column-gap: 0.5em;
+  //flex-direction: row;
+
+  &:not(.block-editor) {
+	display: var(--is-type);
+	flex-wrap: var(--is-flex-wrap);
+	gap: 0.5em;
+	flex-direction: var(--is-orientation);
+	align-items: var(--is-align-items);
+	justify-content: var(--is-justify-content);
+  }
+}
+
+.bild-button-item-block {
+  @extend %btn-style;
+}

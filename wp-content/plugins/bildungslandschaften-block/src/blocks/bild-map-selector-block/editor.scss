@@ -1,0 +1,45 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.bild-map-selector-block {
+
+  .map-selector-wrap {
+	.map-inner {
+	  cursor: crosshair;
+	  border: 2px dashed transparent;
+	  user-select: none;
+	  transition: .3s;
+
+	  &:hover {
+		border: 2px dashed currentColor;
+	  }
+	}
+  }
+}
+
+.components-panel__body {
+  .edit-selectors {
+	.__pointer-edit {
+	  .components-base-control {
+		margin-bottom: 10px;
+	  }
+
+	  .block-editor-url-input input[type=text] {
+		/* box-shadow: 0 0 0 transparent; */
+		/* transition: box-shadow .1s linear; */
+		/* font-size: 16px; */
+		line-height: normal;
+		display: block;
+		margin: 0;
+		position: relative;
+		border: 1px solid #757575;
+		border-radius: 2px;
+
+	  }
+	}
+  }
+}

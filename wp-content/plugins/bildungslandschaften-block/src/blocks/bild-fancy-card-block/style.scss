@@ -72,6 +72,7 @@
 		  .name {
 			flex: 1;
 			padding-right: 10px;
+			margin: 0;
 		  }
 
 		  .num {
@@ -98,15 +99,23 @@
 		  display: flex;
 		  align-items: center;
 		  justify-content: center;
-		  height: 100%;
+		  height: calc(100% - 90px);
 		  transition: .5s opacity;
 
 		  .thumb {
 			text-align: center;
+			height: 100%;
+
+			img {
+			  max-height: 100%;
+			  width: auto;
+			}
 		  }
 
 		  .text {
 			display: none;
+			max-height: 100%;
+			overflow: auto;
 		  }
 		}
 	  }
@@ -148,8 +157,7 @@
 		}
 
 		.card-content {
-		  opacity: 0;
-		  visibility: hidden;
+		  filter: grayscale(100%);
 		}
 
 		&:hover {
@@ -165,8 +173,7 @@
 		  }
 
 		  .card-content {
-			opacity: 1;
-			visibility: visible;
+			filter: unset;
 		  }
 		}
 	  }

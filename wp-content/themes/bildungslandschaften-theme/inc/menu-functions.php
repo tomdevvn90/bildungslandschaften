@@ -36,7 +36,7 @@ function twenty_twenty_one_add_sub_menu_toggle( $output, $item, $depth, $args ) 
 	}
 	return $output;
 }
-add_filter( 'walker_nav_menu_start_el', 'twenty_twenty_one_add_sub_menu_toggle', 10, 4 );
+//add_filter( 'walker_nav_menu_start_el', 'twenty_twenty_one_add_sub_menu_toggle', 10, 4 );
 
 /**
  * Detects the social network from a URL and returns the SVG code for its icon.
@@ -98,4 +98,4 @@ function twenty_twenty_one_add_menu_description_args( $args, $item, $depth ) {
 
 	return $args;
 }
-add_filter( 'nav_menu_item_args', 'twenty_twenty_one_add_menu_description_args', 10, 3 );
+//add_filter( 'nav_menu_item_args', 'twenty_twenty_one_add_menu_description_args', 10, 3 );

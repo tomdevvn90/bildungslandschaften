@@ -161,7 +161,7 @@
 
 // Site logo
 .site-logo {
-
+  max-width: 260px;
   margin: calc(var(--global--spacing-vertical) / 2) 0;
 
   .site-header > & {
@@ -178,7 +178,7 @@
     max-height: var(--branding--logo--max-height-mobile);
     height: auto;
     display: inline-block;
-    width: auto;
+    width: 100%;
   }
 
   @include media(mobile) {
@@ -188,6 +188,7 @@
       max-height: var(--branding--logo--max-height);
       height: auto;
       width: auto;
+      width: 100%;
     }
   }
 }

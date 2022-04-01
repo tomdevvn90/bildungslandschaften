@@ -5,17 +5,114 @@
  * that are used across the project.
 */
 /**
+Editor style
+*/
+.is-root-container {
+  overflow: hidden; }
+  .is-root-container .wp-block {
+    max-width: 1100px; }
+  .is-root-container .wp-block[data-align="left"],
+  .is-root-container .wp-block[data-align="right"] {
+    height: auto; }
+  .is-root-container .wp-block[data-align="full"] {
+    max-width: none; }
+
+.is-root-container.edit-widgets-main-block-list .wp-block {
+  max-width: 700px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.my-block.block-gap {
+  background: wheat; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
  * #.# Editor Styles
  *
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-.text-center {
-  text-align: center; }
-
 .fancy-card-block {
   min-height: 1100px; }
   .fancy-card-block .fancy-cards-wrap .fancy-card-item {
     -webkit-transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px));
         -ms-transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px));
             transform: translate(calc(80px * var(--item) - 80px), calc(150px * var(--item) - 150px)); }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.bild-block--buttons.block-editor .block-editor-inner-blocks .block-editor-block-list__layout {
+  display: var(--is-type);
+  -ms-flex-wrap: var(--is-flex-wrap);
+      flex-wrap: var(--is-flex-wrap);
+  gap: 0.5em;
+  -ms-flex-direction: var(--is-orientation);
+      flex-direction: var(--is-orientation);
+  -ms-flex-align: var(--is-align-items);
+      align-items: var(--is-align-items);
+  -ms-flex-pack: var(--is-justify-content);
+      justify-content: var(--is-justify-content); }
+  .bild-block--buttons.block-editor .block-editor-inner-blocks .block-editor-block-list__layout .wp-block {
+    width: auto;
+    margin-left: inherit;
+    margin-right: inherit; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.bild-map-selector-block .map-selector-wrap .map-inner {
+  cursor: crosshair;
+  border: 2px dashed transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+  .bild-map-selector-block .map-selector-wrap .map-inner:hover {
+    border: 2px dashed currentColor; }
+
+.components-panel__body .edit-selectors .__pointer-edit .components-base-control {
+  margin-bottom: 10px; }
+
+.components-panel__body .edit-selectors .__pointer-edit .block-editor-url-input input[type=text] {
+  /* box-shadow: 0 0 0 transparent; */
+  /* transition: box-shadow .1s linear; */
+  /* font-size: 16px; */
+  line-height: normal;
+  display: block;
+  margin: 0;
+  position: relative;
+  border: 1px solid #757575;
+  border-radius: 2px; }

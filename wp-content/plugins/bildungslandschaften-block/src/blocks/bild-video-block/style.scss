@@ -1,0 +1,68 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.custom-video-block {
+  position: relative;
+
+  > .bg {
+	background-color: #7ebfcc;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.5s cubic-bezier(0, 0.5, 0.2, 1);
+	border: 1px solid var(--dark, $dark);
+	opacity: 1;
+  }
+
+  > .video-wrap {
+	transform: translate(30px, -30px);
+	transition: transform 0.5s cubic-bezier(0.5, 0.5, 0.5, 1), background-color 0.5s cubic-bezier(0.5, 0.5, 0.5, 1);
+	position: relative;
+	z-index: 2;
+	border: 1px solid var(--dark, $dark);
+	background: #7ebfcc;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+
+	video, iframe {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  max-height: 100% !important;
+	}
+
+	.wp-block-embed__wrapper {
+	  position: unset;
+	}
+
+	> * {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  height: 100%;
+	  width: 100%;
+	}
+
+	> *, figure {
+	  margin: 0;
+	  padding: 0;
+	}
+  }
+
+  &:hover {
+	> .bg {
+	  opacity: .8;
+	}
+
+	> .video-wrap {
+	  transform: translate(30px, -30px) scale(1.01);
+	}
+  }
+}

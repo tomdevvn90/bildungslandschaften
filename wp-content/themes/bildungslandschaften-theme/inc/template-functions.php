@@ -472,4 +472,4 @@ function twenty_twenty_one_get_attachment_image_attributes( $attr, $attachment, 
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'twenty_twenty_one_get_attachment_image_attributes', 10, 3 );
+//add_filter( 'wp_get_attachment_image_attributes', 'twenty_twenty_one_get_attachment_image_attributes', 10, 3 );

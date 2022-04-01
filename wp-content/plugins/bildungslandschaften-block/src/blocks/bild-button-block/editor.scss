@@ -1,0 +1,17 @@
+.bild-block--buttons.block-editor {
+  .block-editor-inner-blocks {
+	.block-editor-block-list__layout {
+	  display: var(--is-type);
+	  flex-wrap: var(--is-flex-wrap);
+	  gap: 0.5em;
+	  flex-direction: var(--is-orientation);
+	  align-items: var(--is-align-items);
+	  justify-content: var(--is-justify-content);
+	  .wp-block {
+	    width: auto;
+	    margin-left: inherit;
+	    margin-right: inherit;
+	  }
+	}
+  }
+}
