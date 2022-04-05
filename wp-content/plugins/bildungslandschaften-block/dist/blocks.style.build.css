@@ -587,6 +587,9 @@
   grid-gap: 20px; }
   .bild-map-selector-block:not(.__hide-button) {
     grid-template-columns: 1fr 1fr; }
+  .bild-map-selector-block.__reverse-column .info-wrap {
+    grid-column: 1;
+    grid-row: 1; }
   .bild-map-selector-block .map-selector-wrap {
     display: -ms-flexbox;
     display: flex;

@@ -9,6 +9,12 @@
   &:not(.__hide-button){
 	grid-template-columns: 1fr 1fr;
   }
+  &.__reverse-column{
+	.info-wrap {
+	  grid-column: 1;
+	  grid-row: 1;
+	}
+  }
 
   .map-selector-wrap {
 	display: flex;

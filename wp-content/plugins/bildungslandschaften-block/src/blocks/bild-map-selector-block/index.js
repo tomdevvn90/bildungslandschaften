@@ -79,7 +79,7 @@ const Edit = ( props ) => {
 	const mapInnerEl = useRef( null );
 	const mapImgWrapEl = useRef( null );
 	const [ keyMove, setKeyMove ] = useState( null );
-	console.log( listSelectors );
+	//console.log( listSelectors );
 
 	const onRemoveItem = ( i )=>{
 		const selectors = JSON.parse( JSON.stringify( listSelectors ) );
@@ -130,7 +130,6 @@ const Edit = ( props ) => {
 		<Fragment>
 			<InspectorControls>
 				<PanelBody
-					initialOpen={ false }
 					title={ __( 'General Settings' ) }>
 					<ToggleControl
 						label="Reverse Column"
