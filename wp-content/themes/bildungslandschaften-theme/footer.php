@@ -41,13 +41,7 @@
 			?>
 
 			<div class="powered-by">
-				<?php
-				printf(
-					/* translators: %s: WordPress. */
-					esc_html__( 'Proudly powered by %s.', 'bildungslandschaften' ),
-					'<a href="' . esc_url( __( 'https://wordpress.org/', 'bildungslandschaften' ) ) . '">WordPress</a>'
-				);
-				?>
+
 			</div><!-- .powered-by -->
 
 		</div><!-- .site-info -->

@@ -53,6 +53,10 @@ function bildungslandschaften_block_cgb_block_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
+	wp_enqueue_script( 'slick-js', plugins_url( 'assets/lib/slick/slick.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '1.8.1', true );
+	wp_enqueue_style( 'slick', plugins_url( 'assets/lib/slick/slick.css', dirname( __FILE__ ) ), false, '1.8.1' );
+	wp_enqueue_style( 'slick-theme', plugins_url( 'assets/lib/slick/slick-theme.css', dirname( __FILE__ ) ), false, '1.8.1' );
+
 	wp_enqueue_script( 'bil-plugin', plugins_url( 'assets/js/functions.min.js', dirname( __FILE__ ) ),
 		array( 'jquery' ), '1.0.0', true );
 	wp_localize_script( 'bil-plugin', 'cgbGlobal', [

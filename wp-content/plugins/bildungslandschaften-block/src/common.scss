@@ -12,6 +12,7 @@
 //Fonts
 // Colors.
 $dark: #161614;
+$accentColor: #7ebfcc;
 
 @function em($pixels, $context: 16) {
   @return #{$pixels / $context}em;

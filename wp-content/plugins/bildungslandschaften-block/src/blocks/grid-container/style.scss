@@ -1,0 +1,15 @@
+.grid-container {
+	&:not(.grid-edit) {
+		> .inner-wrap {
+			display: grid;
+			grid-gap: var(--grid-gap, 20px);
+			grid-template-columns: repeat(var(--cols, 3), 1fr);
+			@include media-breakpoint-down(md) {
+				grid-template-columns: repeat(var(--cols-tablet, 2), 1fr);
+			}
+			@include media-breakpoint-down(sm) {
+				grid-template-columns: repeat(var(--cols-mobile, 1), 1fr);
+			}
+		}
+	}
+}

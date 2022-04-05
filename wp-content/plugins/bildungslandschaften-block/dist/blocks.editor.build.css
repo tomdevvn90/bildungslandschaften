@@ -33,6 +33,56 @@ Editor style
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.grid-container {
+  border: 1px dashed #808285;
+  padding: 4px; }
+  .grid-container > .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: grid;
+    grid-gap: var(--grid-gap, 20px);
+    grid-template-columns: repeat(var(--cols, 3), 1fr); }
+    .grid-container > .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="my-block/grid-item"] {
+      border: 1px dashed #808285;
+      width: 100%; }
+    .grid-container > .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+      position: relative;
+      margin: auto; }
+  .grid-container > .inner-wrap .grid-item .grid-item-inner > .block-editor-inner-blocks > .block-editor-block-list__layout:empty {
+    padding: 10px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.slider-container.slider-edit .inner-wrap {
+  padding: 20px;
+  border: 1px dashed #808285; }
+  .slider-container.slider-edit .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: -ms-flexbox;
+    display: flex;
+    overflow: auto; }
+    .slider-container.slider-edit .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout [data-type="my-blocks/slider-item"] {
+      width: 100%;
+      min-width: 400px;
+      min-width: -webkit-fit-content;
+      min-width: -moz-fit-content;
+      min-width: fit-content; }
+      .slider-container.slider-edit .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout [data-type="my-blocks/slider-item"] + [data-type="my-blocks/slider-item"] {
+        margin-left: 20px; }
+    .slider-container.slider-edit .inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout .block-list-appender {
+      margin: auto;
+      position: relative;
+      margin-left: 20px; }
+
+.slider-container.slider-edit .slider-item {
+  padding: 5px;
+  border: 1px dashed #808285; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
 /**
  * #.# Editor Styles
  *

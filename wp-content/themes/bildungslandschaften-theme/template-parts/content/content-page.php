@@ -12,14 +12,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header alignwide text-center">
-        <?php get_template_part( 'template-parts/header/entry-header' ); ?>
-    </header><!-- .entry-header -->
+	<?php if ( ! is_front_page() ) { ?>
+        <header class="entry-header alignwide text-center">
+			<?php get_template_part( 'template-parts/header/entry-header' ); ?>
+        </header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
-
 		wp_link_pages(
 			array(
 				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'bildungslandschaften' ) . '">',

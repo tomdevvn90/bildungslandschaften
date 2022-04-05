@@ -1,0 +1,36 @@
+.grid-container {
+	border: 1px dashed #808285;
+	padding: 4px;
+
+	> .inner-wrap {
+		> .block-editor-inner-blocks {
+			> .block-editor-block-list__layout {
+				display: grid;
+				grid-gap: var(--grid-gap, 20px);
+				grid-template-columns: repeat(var(--cols, 3), 1fr);
+
+				> [data-type="my-block/grid-item"] {
+					border: 1px dashed #808285;
+					width: 100%;
+				}
+
+				> .block-list-appender {
+					position: relative;
+					margin: auto;
+				}
+			}
+		}
+
+		.grid-item {
+			.grid-item-inner {
+				> .block-editor-inner-blocks {
+					> .block-editor-block-list__layout {
+						&:empty {
+							padding: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

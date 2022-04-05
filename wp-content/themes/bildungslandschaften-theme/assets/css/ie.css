@@ -1169,6 +1169,7 @@ body {
 	color: #28303d;
 	text-align: left;
 	background-color: #d1e4dd;
+	overflow-x: hidden;
 }
 
 .clear:after,

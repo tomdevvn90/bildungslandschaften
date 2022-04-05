@@ -11,6 +11,8 @@
 
 import './custom-style';
 import './blocks/gap';
+import './blocks/grid-container';
+import './blocks/slider-container';
 import './blocks/bild-fancy-card-block';
 import './blocks/bild-heading-stroke-block';
 import './blocks/bild-video-block';

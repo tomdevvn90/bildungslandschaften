@@ -5,8 +5,10 @@
  */
 .bild-map-selector-block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  &:not(.__hide-button){
+	grid-template-columns: 1fr 1fr;
+  }
 
   .map-selector-wrap {
 	display: flex;
@@ -42,7 +44,8 @@
 		  font-weight: bold;
 		  border: 1px solid;
 		  transition: .3s;
-		  &:hover{
+		  &:hover,
+		  &.__active{
 			transform: translate(-25px, -25px) scale(1.1);
 			background: #fdc941;
 		  }

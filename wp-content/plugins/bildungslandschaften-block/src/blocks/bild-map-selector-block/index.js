@@ -52,18 +52,6 @@ const attr = {
 	bgUrl: {
 		type: 'string',
 	},
-	colorBg: {
-		type: 'string',
-		default: '#f1f1f1',
-	},
-	overlayBg: {
-		type: 'string',
-		default: '#21284a',
-	},
-	opacity: {
-		type: 'number',
-		default: 0.4,
-	},
 	align: {
 		type: 'string',
 		default: 'wide',
@@ -71,14 +59,22 @@ const attr = {
 	listSelectors: {
 		type: 'array',
 		default: [
-			{ x: '50%', y: '50%', title: 'this title', link: '#' },
+			{ x: '50%', y: '50%', title: 'this title', link: '#', active: false },
 		],
+	},
+	reverseColumn: {
+		type: 'boolean',
+		default: false,
+	},
+	hideButtonColumn: {
+		type: 'boolean',
+		default: false,
 	},
 };
 
 const Edit = ( props ) => {
 	const { attributes, setAttributes, className } = props;
-	const { bgID, bgUrl, colorBg, overlayBg, opacity, listSelectors } = attributes;
+	const { bgID, bgUrl, listSelectors, reverseColumn, hideButtonColumn } = attributes;
 	const instructions = <p>{ __( 'To edit the background image, you need permission to upload media.' ) }</p>;
 	const mapInnerEl = useRef( null );
 	const mapImgWrapEl = useRef( null );
@@ -127,13 +123,27 @@ const Edit = ( props ) => {
 		const x = e.clientX - rect.left; //x position within the element.
 		const y = e.clientY - rect.top; //y position within the element.
 		const selectors = JSON.parse( JSON.stringify( listSelectors ) );
-		selectors.push( { x: `${ ( x / w * 100 ) }%`, y: `${ ( y / h * 100 ) }%`, title: 'this title', link: '#' } );
+		selectors.push( { x: `${ ( x / w * 100 ) }%`, y: `${ ( y / h * 100 ) }%`, title: 'this title', link: '#', active: false } );
 		setAttributes( { listSelectors: selectors } );
 	};
 	return (
 		<Fragment>
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings Item' ) } initialOpen={ false }>
+				<PanelBody
+					initialOpen={ false }
+					title={ __( 'General Settings' ) }>
+					<ToggleControl
+						label="Reverse Column"
+						checked={ reverseColumn }
+						onChange={ () => setAttributes( { reverseColumn: ! reverseColumn } ) }
+					/>
+					<ToggleControl
+						label="Hide Button Column"
+						checked={ hideButtonColumn }
+						onChange={ () => setAttributes( { hideButtonColumn: ! hideButtonColumn } ) }
+					/>
+				</PanelBody>
+				<PanelBody title={ __( 'Setting Items' ) } initialOpen={ false }>
 					{ listSelectors.length > 0 && (
 						<div className="edit-selectors">
 							{ listSelectors.map( ( e, i )=>{
@@ -155,6 +165,11 @@ const Edit = ( props ) => {
 												hasBorder
 											/>
 										</BaseControl>
+										<ToggleControl
+											label="Active Item"
+											checked={ e.active }
+											onChange={ () => onChangeContent( i, 'active', ! e.active ) }
+										/>
 										<Button isDestructive isSmall onClick={ ()=>onRemoveItem( i ) }>Remove</Button>
 										<hr />
 									</div>
@@ -163,11 +178,11 @@ const Edit = ( props ) => {
 						</div>
 					) }
 				</PanelBody>
-				<PanelBody title={ __( 'Background Image' ) }>
+				<PanelBody title={ __( 'Map Image' ) }>
 					<div className="components-placeholder__fieldset">
 						<MediaUploadCheck fallback={ instructions }>
 							<MediaUpload
-								title={ __( 'Background Image' ) }
+								title={ __( 'Map Image' ) }
 								onSelect={ ( media ) => (
 									setAttributes( {
 										bgID: media.id,
@@ -180,10 +195,10 @@ const Edit = ( props ) => {
 									<Button
 										className={ ! bgID ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview' }
 										onClick={ open }>
-										{ ! bgID && ( __( 'Change Background Image' ) ) }
+										{ ! bgID && ( __( 'Change Map Image' ) ) }
 										{ !! bgID && ! bgUrl && <Spinner /> }
 										{ !! bgID && bgUrl &&
-										<img src={ bgUrl } alt={ __( 'Background image' ) } />
+										<img src={ bgUrl } alt={ __( 'Map image' ) } />
 										}
 									</Button>
 								) }
@@ -192,7 +207,7 @@ const Edit = ( props ) => {
 						{ !! bgID && bgUrl &&
 							<MediaUploadCheck>
 								<MediaUpload
-									title={ __( 'Background' ) }
+									title={ __( 'Map Image' ) }
 									onSelect={ ( media ) => (
 										setAttributes( {
 											bgID: media.id,
@@ -223,43 +238,12 @@ const Edit = ( props ) => {
 						}
 					</div>
 				</PanelBody>
-
-				<PanelBody
-					initialOpen={ false }
-					title={ __( 'Color Background' ) }>
-					<PanelColorSettings
-						title={ __( 'Settings' ) }
-						initialOpen={ false }
-						colorSettings={ [
-							{
-								value: colorBg,
-								onChange: ( colorValue ) => setAttributes( { colorBg: colorValue } ),
-								label: __( 'Background Color' ),
-								colors: COLOR_DEFAULT,
-							},
-							{
-								value: overlayBg,
-								onChange: ( colorValue ) => setAttributes( { overlayBg: colorValue } ),
-								label: __( 'Background Overlay' ),
-								colors: COLOR_DEFAULT,
-							},
-						] }
-					>
-					</PanelColorSettings>
-					<hr />
-					<RangeControl
-						label="Opacity"
-						value={ opacity }
-						onChange={ ( value ) => setAttributes( { opacity: value } ) }
-						min={ 0 }
-						max={ 1 }
-						step={ 0.01 }
-					/>
-				</PanelBody>
 			</InspectorControls>
 			<div className={ [
 				'bild-map-selector-block',
 				'block-editor',
+				hideButtonColumn ? '__hide-button' : '',
+				reverseColumn ? '__reverse-column' : '',
 				className ].join( ' ' ) }
 			>
 				<div className="map-selector-wrap">
@@ -277,23 +261,26 @@ const Edit = ( props ) => {
 										<div key={ 'po-' + i } title={ e.title }
 											style={ { '--x': e.x, '--y': e.y } } //onClick={ openModal }
 											onMouseDown={ ( event )=>mapEventPointerMouseDown( event, i ) }
-											className="__pointer">{ i + 1 }</div>
+											className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
 									);
 								} ) }
 							</div>
 						) }
 					</div>
 				</div>
-				<div className="info-wrap">
-					<div className="btn-info-map-selector">
-						<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
-							<span className="bild-btn-text">Info Map Button</span>
-							<span className="__icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
-							</span>
-						</a>
+				{
+					! hideButtonColumn &&
+					<div className="info-wrap">
+						<div className="btn-info-map-selector">
+							<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
+								<span className="bild-btn-text">Info Map Button</span>
+								<span className="__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
+								</span>
+							</a>
+						</div>
 					</div>
-				</div>
+				}
 			</div>
 		</Fragment>
 	);
@@ -309,11 +296,13 @@ registerBlockType( 'bild-block/bild-map-selector', {
 		align: [ 'full', 'wide' ],
 	},
 	save: ( { attributes, className } ) => {
-		const { colorBg, bgUrl, focalPoint, overlayBg, opacity, listSelectors } = attributes;
+		const { bgUrl, listSelectors, reverseColumn, hideButtonColumn } = attributes;
 
 		return (
 			<div className={ [
 				'bild-map-selector-block',
+				hideButtonColumn ? '__hide-button' : '',
+				reverseColumn ? '__reverse-column' : '',
 				className ].join( ' ' ) } >
 				<div className="map-selector-wrap">
 					<div className="map-inner">
@@ -324,23 +313,30 @@ registerBlockType( 'bild-block/bild-map-selector', {
 							<div className="pointer-selectors">
 								{ listSelectors.map( ( e, i )=>{
 									return (
-										<div key={ 'po-' + i } data-map={ JSON.stringify( e ) } title={ e.title } style={ { '--x': e.x, '--y': e.y } } className="__pointer">{ i + 1 }</div>
+										<div key={ 'po-' + i } data-map={ JSON.stringify( e ) }
+											title={ e.title } style={ { '--x': e.x, '--y': e.y } }
+											className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
 									);
 								} ) }
 							</div>
 						) }
 					</div>
 				</div>
-				<div className="info-wrap">
-					<div className="btn-info-map-selector">
-						<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
-							<span className="bild-btn-text">Info Map Button</span>
-							<span className="__icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
-							</span>
-						</a>
+				{
+					! hideButtonColumn &&
+					<div className="info-wrap">
+						<div className="btn-info-map-selector">
+							<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
+								<span className="bild-btn-text">Info Map Button</span>
+								<span className="__icon">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path
+										fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"
+										d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
+								</span>
+							</a>
+						</div>
 					</div>
-				</div>
+				}
 			</div>
 		);
 	},

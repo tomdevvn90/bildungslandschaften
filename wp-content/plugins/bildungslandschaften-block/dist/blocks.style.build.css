@@ -32,6 +32,155 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.grid-container:not(.grid-edit) > .inner-wrap {
+  display: grid;
+  grid-gap: var(--grid-gap, 20px);
+  grid-template-columns: repeat(var(--cols, 3), 1fr); }
+  @media (max-width: 991.98px) {
+    .grid-container:not(.grid-edit) > .inner-wrap {
+      grid-template-columns: repeat(var(--cols-tablet, 2), 1fr); } }
+  @media (max-width: 767.98px) {
+    .grid-container:not(.grid-edit) > .inner-wrap {
+      grid-template-columns: repeat(var(--cols-mobile, 1), 1fr); } }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.slider-container {
+  position: relative; }
+  .slider-container.alignfull {
+    width: 100vw;
+    margin-left: calc((100% - 100vw) / 2); }
+  .slider-container .inner-wrap {
+    padding-bottom: 40px; }
+    .slider-container .inner-wrap .slick-arrow,
+    .slider-container .inner-wrap .slick-dots {
+      position: absolute; }
+    .slider-container .inner-wrap .slick-next {
+      right: 15px; }
+    .slider-container .inner-wrap .slick-prev {
+      left: 15px; }
+    .slider-container .inner-wrap .slick-arrow {
+      opacity: 0.6;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; }
+      @media (max-width: 767px) {
+        .slider-container .inner-wrap .slick-arrow {
+          top: 135px;
+          -webkit-transform: translate(0, 0);
+              -ms-transform: translate(0, 0);
+                  transform: translate(0, 0); } }
+      .slider-container .inner-wrap .slick-arrow svg {
+        width: 20px;
+        color: #7ebfcc; }
+      .slider-container .inner-wrap .slick-arrow:before {
+        content: unset; }
+      .slider-container .inner-wrap .slick-arrow.custom-slick-arrow {
+        top: calc(50% - 20px);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        z-index: 2;
+        color: #7ebfcc;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.4);
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        border-radius: 50%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        opacity: 1; }
+        @media (max-width: 767.98px) {
+          .slider-container .inner-wrap .slick-arrow.custom-slick-arrow {
+            width: 40px;
+            height: 40px; } }
+        .slider-container .inner-wrap .slick-arrow.custom-slick-arrow.next-a {
+          right: 10px; }
+        .slider-container .inner-wrap .slick-arrow.custom-slick-arrow.prev-a {
+          left: 10px;
+          -webkit-transform: rotate(180deg) translateY(50%);
+              -ms-transform: rotate(180deg) translateY(50%);
+                  transform: rotate(180deg) translateY(50%); }
+        .slider-container .inner-wrap .slick-arrow.custom-slick-arrow svg {
+          width: 28px;
+          height: 19px; }
+          @media (max-width: 767.98px) {
+            .slider-container .inner-wrap .slick-arrow.custom-slick-arrow svg {
+              width: 20px;
+              height: 14px; } }
+        .slider-container .inner-wrap .slick-arrow.custom-slick-arrow:hover {
+          background: white; }
+      .slider-container .inner-wrap .slick-arrow:hover {
+        opacity: 1; }
+    .slider-container .inner-wrap .slick-dots {
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 1;
+      font-size: 0;
+      text-align: center;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+      @media (max-width: 767.98px) {
+        .slider-container .inner-wrap .slick-dots {
+          right: 50%;
+          bottom: 15px;
+          -webkit-transform: translateX(50%);
+              -ms-transform: translateX(50%);
+                  transform: translateX(50%);
+          -ms-flex-direction: row;
+              flex-direction: row;
+          bottom: unset;
+          top: 320px; } }
+      .slider-container .inner-wrap .slick-dots li:only-child {
+        display: none; }
+      .slider-container .inner-wrap .slick-dots li button {
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: black !important;
+        font-size: 0;
+        border: none;
+        outline: none;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+        .slider-container .inner-wrap .slick-dots li button:before {
+          content: unset; }
+      .slider-container .inner-wrap .slick-dots li.slick-active button, .slider-container .inner-wrap .slick-dots li:hover button {
+        background: #7ebfcc !important; }
+    .slider-container .inner-wrap .slick-list {
+      margin: 0 calc(var(--items-space, 0px) / -2); }
+      .slider-container .inner-wrap .slick-list .slider-item {
+        margin: 0 calc(var(--items-space, 0px) / 2);
+        overflow: hidden; }
+        .slider-container .inner-wrap .slick-list .slider-item-inner {
+          position: relative; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
 /**
  * #.# Styles
  *
@@ -435,8 +584,9 @@
  */
 .bild-map-selector-block {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 20px; }
+  .bild-map-selector-block:not(.__hide-button) {
+    grid-template-columns: 1fr 1fr; }
   .bild-map-selector-block .map-selector-wrap {
     display: -ms-flexbox;
     display: flex;
@@ -476,7 +626,7 @@
         -webkit-transition: .3s;
         -o-transition: .3s;
         transition: .3s; }
-        .bild-map-selector-block .map-selector-wrap .map-inner .pointer-selectors .__pointer:hover {
+        .bild-map-selector-block .map-selector-wrap .map-inner .pointer-selectors .__pointer:hover, .bild-map-selector-block .map-selector-wrap .map-inner .pointer-selectors .__pointer.__active {
           -webkit-transform: translate(-25px, -25px) scale(1.1);
               -ms-transform: translate(-25px, -25px) scale(1.1);
                   transform: translate(-25px, -25px) scale(1.1);

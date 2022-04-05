@@ -1086,6 +1086,7 @@ body {
 	color: var(--global--color-primary);
 	text-align: right;
 	background-color: var(--global--color-background);
+	overflow-x: hidden;
 }
 
 button {
