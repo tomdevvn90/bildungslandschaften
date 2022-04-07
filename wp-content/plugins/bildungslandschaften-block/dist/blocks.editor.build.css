@@ -166,3 +166,23 @@ Editor style
   position: relative;
   border: 1px solid #757575;
   border-radius: 2px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.bild-card-item-people {
+  padding: 4px; }
+  .bild-card-item-people .inner-card .img-wrap button.components-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 0; }
+    .bild-card-item-people .inner-card .img-wrap button.components-button:hover {
+      opacity: .8; }

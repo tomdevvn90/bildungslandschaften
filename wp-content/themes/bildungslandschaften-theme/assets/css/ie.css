@@ -1150,8 +1150,8 @@ html {
 
 	/* Apply border-box across the entire page. */
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	line-height: 1.7;
+	font-family: "Flama";
+	line-height: 1.6;
 }
 
 /**
@@ -1203,11 +1203,11 @@ blockquote > *:last-child {
 
 blockquote p {
 	letter-spacing: normal;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 blockquote cite,
@@ -1243,7 +1243,7 @@ blockquote strong {
 blockquote:before {
 	content: "“";
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	position: absolute;
 	left: -12px;
 }
@@ -1284,7 +1284,7 @@ input[type=color],
 	border: 3px solid #39414d;
 	border-radius: 0;
 	color: #28303d;
-	line-height: 1.7;
+	line-height: 1.6;
 	padding: 10px;
 	margin: 0 2px;
 	max-width: 100%;
@@ -1372,7 +1372,7 @@ select {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	line-height: 1.7;
+	line-height: 1.6;
 	padding: 10px 30px 10px 10px;
 	background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2328303d'><polygon points='0,0 10,0 5,5'/></svg>") no-repeat;
 	background-position: right 10px top 60%;
@@ -1655,7 +1655,7 @@ figcaption,
 .wp-block-embed figcaption {
 	color: currentColor;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	text-align: center;
@@ -1780,7 +1780,7 @@ input[type=reset],
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	line-height: 1.5;
 	padding: 15px 38px;
@@ -2348,7 +2348,7 @@ h5,
 h6,
 .h6 {
 	clear: both;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 h1 strong,
@@ -2419,7 +2419,7 @@ h2 {
 }
 
 h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	letter-spacing: normal;
 	line-height: 1.3;
 }
@@ -2432,7 +2432,7 @@ h3 {
 }
 
 .h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	letter-spacing: normal;
 	line-height: 1.3;
 }
@@ -2446,7 +2446,7 @@ h3 {
 
 h4,
 .h4 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: normal;
 	line-height: 1.3;
@@ -2475,7 +2475,7 @@ h6,
 .wp-block-image figcaption {
 	color: #28303d;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	text-align: center;
@@ -2535,7 +2535,7 @@ h6,
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 
 	/* Vertical margins logic */
 	margin-top: 30px;
@@ -2551,7 +2551,7 @@ h6,
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -2561,7 +2561,7 @@ h6,
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin: 0;
 }
 
@@ -2625,8 +2625,8 @@ h6,
 
 .wp-block-latest-posts > li > a {
 	display: inline-block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1.3;
 	margin-bottom: 10px;
@@ -2646,13 +2646,13 @@ h6,
 .wp-block-latest-posts .wp-block-latest-posts__post-author {
 	color: #28303d;
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
 	color: #28303d;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 [class*=inner-container] .wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -2662,9 +2662,9 @@ h6,
 
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 20px;
 }
 
@@ -2806,7 +2806,7 @@ figure.wp-caption a:focus img {
 
 ul,
 ol {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	margin: 0;
 	padding-left: 50px;
 }
@@ -2841,7 +2841,7 @@ ol ul {
 }
 
 dt {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-weight: bold;
 }
 
@@ -2916,7 +2916,7 @@ dd {
 }
 
 .wp-block-navigation .wp-block-navigation-link .wp-block-navigation-link__label {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	font-weight: normal;
 }
@@ -3003,7 +3003,7 @@ dd {
 }
 
 p {
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 p.has-background {
@@ -3046,8 +3046,8 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-pullquote p {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: normal;
@@ -3145,7 +3145,7 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 @media only screen and (min-width: 652px) {
 
@@ -3191,7 +3191,7 @@ pre.wp-block-preformatted {
 .wp-block-quote:before {
 	content: "“";
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	left: 8px;
 }
 
@@ -3224,7 +3224,7 @@ pre.wp-block-preformatted {
 	content: "”";
 	font-size: 1.25rem;
 	font-weight: normal;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-right: 5px;
 }
 
@@ -3436,8 +3436,8 @@ pre.wp-block-preformatted {
 
 .wp-block-rss .wp-block-rss__item-title > a {
 	display: inline-block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1.3;
 	margin-bottom: 10px;
@@ -3452,13 +3452,13 @@ pre.wp-block-preformatted {
 .wp-block-rss .wp-block-rss__item-author {
 	color: #28303d;
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-rss .wp-block-rss__item-publish-date {
 	color: #28303d;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 [class*=inner-container] .wp-block-rss .wp-block-rss__item-publish-date,
@@ -3468,9 +3468,9 @@ pre.wp-block-preformatted {
 
 .wp-block-rss .wp-block-rss__item-excerpt,
 .wp-block-rss .wp-block-rss__item-full-content {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 20px;
 }
 
@@ -3517,7 +3517,7 @@ pre.wp-block-preformatted {
 	border: 3px solid #39414d;
 	border-radius: 0;
 	color: #28303d;
-	line-height: 1.7;
+	line-height: 1.6;
 	max-width: inherit;
 	margin-right: -2px;
 	padding: 10px;
@@ -3731,7 +3731,7 @@ table tfoot,
 
 table th,
 .wp-block-table th {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 table td,
@@ -3834,7 +3834,7 @@ table.wp-calendar-table caption {
 }
 
 .wp-block-verse {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 .wp-block-video figcaption {
@@ -3922,7 +3922,7 @@ table.wp-calendar-table caption {
 :root .is-huge-text {
 	font-size: 5rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -3934,7 +3934,7 @@ table.wp-calendar-table caption {
 :root .has-huge-font-size {
 	font-size: 5rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -3946,7 +3946,7 @@ table.wp-calendar-table caption {
 :root .is-gigantic-text {
 	font-size: 8rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -3958,7 +3958,7 @@ table.wp-calendar-table caption {
 :root .has-gigantic-font-size {
 	font-size: 8rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -4130,7 +4130,7 @@ table.wp-calendar-table caption {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-weight: 700;
 	line-height: 0.66;
 	text-transform: uppercase;
@@ -4296,8 +4296,8 @@ table.wp-calendar-table caption {
 
 .site-title {
 	color: #28303d;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1.5rem;
+	font-family: "Flama";
+	font-size: 1.25rem;
 	letter-spacing: normal;
 	text-transform: uppercase;
 	line-height: 1.3;
@@ -4328,7 +4328,7 @@ table.wp-calendar-table caption {
 
 .site-description {
 	color: currentColor;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
 	line-height: 1.4;
 }
@@ -4387,9 +4387,9 @@ table.wp-calendar-table caption {
 .site-footer > .site-info {
 	padding-top: 30px;
 	color: #28303d;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	border-top: 3px solid #28303d;
 }
 
@@ -4506,7 +4506,7 @@ table.wp-calendar-table caption {
 
 h1.entry-title {
 	line-height: 1.1;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 .entry-header .close-icon-title {
@@ -4556,7 +4556,7 @@ h1.entry-title {
  */
 .entry-content,
 .entry-summary {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 .entry-content {
@@ -4724,8 +4724,8 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 }
 
 .author-bio .author-bio-content .author-title {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1.5rem;
+	font-family: "Flama";
+	font-size: 1.25rem;
 	display: inline;
 }
 
@@ -4748,7 +4748,7 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 
 h1.page-title,
 h2.page-title {
-	font-weight: 400;
+	font-weight: 500;
 }
 
 h1.page-title {
@@ -4883,7 +4883,7 @@ h1.page-title {
 }
 
 .comment-reply-title small a {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1rem;
 	font-style: normal;
 	font-weight: normal;
@@ -4942,7 +4942,7 @@ h1.page-title {
 }
 
 .comment-meta .comment-author .fn {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-weight: normal;
 	font-size: 1.5rem;
 	hyphens: auto;
@@ -4985,7 +4985,7 @@ h1.page-title {
 
 .pingback .url,
 .trackback .url {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 .comment-body {
@@ -5446,7 +5446,7 @@ h1.page-title {
 
 .navigation-wrap .menu-container-wrap a {
 	display: block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
 	font-weight: normal;
 	padding: 13px 0;
@@ -5456,7 +5456,7 @@ h1.page-title {
 
 	.navigation-wrap .menu-container-wrap a {
 		display: block;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		font-family: "Flama";
 		font-size: 1.25rem;
 		font-weight: normal;
 	}
@@ -5675,13 +5675,13 @@ h1.page-title {
 }
 
 .post-navigation .meta-nav {
-	line-height: 1.7;
+	line-height: 1.6;
 	color: #28303d;
 }
 
 .post-navigation .post-title {
 	display: inline-block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.5rem;
 	font-weight: 600;
 	line-height: 1.3;
@@ -5760,7 +5760,7 @@ h1.page-title {
 .pagination .nav-links > *,
 .comments-pagination .nav-links > * {
 	color: #28303d;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.5rem;
 	font-weight: normal;
 	margin-top: 30px;
@@ -5846,7 +5846,7 @@ h1.page-title {
 	padding-bottom: 10px;
 	color: #28303d;
 	font-size: 1.125rem;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 @media only screen and (min-width: 652px) {
 

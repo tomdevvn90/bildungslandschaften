@@ -22,7 +22,7 @@ $baseline-unit: 10px;
 	--global--letter-spacing: normal;
 
 	/* Line Height */
-	--global--line-height-body: 1.7;
+	--global--line-height-body: 1.6;
 	--global--line-height-heading: 1.3;
 	--global--line-height-page-title: 1.1;
 
@@ -31,8 +31,8 @@ $baseline-unit: 10px;
 
 	--heading--font-size-h6: var(--global--font-size-xs);
 	--heading--font-size-h5: var(--global--font-size-sm);
-	--heading--font-size-h4: var(--global--font-size-lg);
-	--heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+	--heading--font-size-h4: var(--global--font-size-md);
+	--heading--font-size-h3: var(--global--font-size-lg);
 	--heading--font-size-h2: var(--global--font-size-xl);
 	--heading--font-size-h1: var(--global--font-size-page-title);
 
@@ -51,7 +51,7 @@ $baseline-unit: 10px;
 	--heading--line-height-h1: var(--global--line-height-page-title);
 
 	--heading--font-weight: 700;
-	--heading--font-weight-page-title: 400;
+	--heading--font-weight-page-title: 500;
 	--heading--font-weight-strong: 700;
 
 	/* Block: Latest posts */

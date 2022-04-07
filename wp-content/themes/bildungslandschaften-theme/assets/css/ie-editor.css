@@ -140,11 +140,11 @@ blockquote > *:last-child {
 
 blockquote p {
 	letter-spacing: normal;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 blockquote cite,
@@ -180,7 +180,7 @@ blockquote strong {
 blockquote:before {
 	content: "“";
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	position: absolute;
 	left: -12px;
 }
@@ -227,7 +227,7 @@ figcaption,
 .wp-block-embed figcaption {
 	color: currentColor;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	text-align: center;
@@ -328,7 +328,7 @@ a:hover {
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	line-height: 1.5;
 	padding: 15px 38px;
@@ -668,7 +668,7 @@ a:hover {
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	line-height: 1.5;
 	padding: 15px 38px;
@@ -779,18 +779,11 @@ h2,
 .wp-block-heading h3,
 h3,
 .h3 {
+	clear: both;
+	font-family: "Flama";
 	font-weight: 700;
 }
 
-.wp-block-heading h1,
-h1,
-.h1,
-.wp-block-heading h2,
-h2,
-.h2,
-.wp-block-heading h3,
-h3,
-.h3,
 .wp-block-heading h4,
 h4,
 .h4,
@@ -801,7 +794,7 @@ h5,
 h6,
 .h6 {
 	clear: both;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 .wp-block-heading h1 strong,
@@ -843,7 +836,7 @@ h5[style*="--wp--typography--line-height"],
 .wp-block-heading h6[style*="--wp--typography--line-height"],
 h6[style*="--wp--typography--line-height"],
 .h6[style*="--wp--typography--line-height"] {
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-heading h1 {
@@ -925,7 +918,7 @@ h2 {
 }
 
 .wp-block-heading h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	letter-spacing: normal;
 	line-height: 1.3;
 }
@@ -938,7 +931,7 @@ h2 {
 }
 
 h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	letter-spacing: normal;
 	line-height: 1.3;
 }
@@ -951,7 +944,7 @@ h3 {
 }
 
 .h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	letter-spacing: normal;
 	line-height: 1.3;
 }
@@ -966,7 +959,7 @@ h3 {
 .wp-block-heading h4,
 h4,
 .h4 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: normal;
 	line-height: 1.3;
@@ -1062,8 +1055,8 @@ h6,
 
 .wp-block-latest-posts > li > a {
 	display: inline-block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1.3;
 	margin-bottom: 10px;
@@ -1078,13 +1071,13 @@ h6,
 .wp-block-latest-posts .wp-block-latest-posts__post-author {
 	color: #28303d;
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
 	color: #28303d;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 [class*=inner-container] .wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -1094,9 +1087,9 @@ h6,
 
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 20px;
 }
 
@@ -1216,7 +1209,7 @@ h6,
 
 ul,
 ol {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	margin: 30px 0;
 	padding-left: 50px;
 }
@@ -1241,7 +1234,7 @@ li > ol {
 }
 
 dt {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-weight: bold;
 }
 
@@ -1278,7 +1271,7 @@ dt {
 }
 
 .wp-block-navigation .wp-block-navigation-link .wp-block-navigation-link__label {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	font-weight: normal;
 }
@@ -1297,7 +1290,7 @@ dt {
 }
 
 p {
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 p.has-background {
@@ -1333,8 +1326,8 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-pullquote p {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: normal;
@@ -1396,7 +1389,7 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 @media only screen and (min-width: 652px) {
 
@@ -1434,11 +1427,11 @@ pre.wp-block-preformatted {
 }
 
 .wp-block-quote p {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-quote strong {
@@ -1448,7 +1441,7 @@ pre.wp-block-preformatted {
 .wp-block-quote:before {
 	content: "“";
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	left: -12px;
 }
 
@@ -1479,7 +1472,7 @@ pre.wp-block-preformatted {
 	content: "”";
 	font-size: 1.25rem;
 	font-weight: normal;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-right: 5px;
 }
 
@@ -1692,8 +1685,8 @@ pre.wp-block-preformatted {
 
 .wp-block-rss .wp-block-rss__item-title > a {
 	display: inline-block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 2rem;
+	font-family: "Flama";
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1.3;
 	margin-bottom: 10px;
@@ -1708,13 +1701,13 @@ pre.wp-block-preformatted {
 .wp-block-rss .wp-block-rss__item-author {
 	color: #28303d;
 	font-size: 1.25rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 .wp-block-rss .wp-block-rss__item-publish-date {
 	color: #28303d;
 	font-size: 1rem;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 [class*=inner-container] .wp-block-rss .wp-block-rss__item-publish-date,
@@ -1724,9 +1717,9 @@ pre.wp-block-preformatted {
 
 .wp-block-rss .wp-block-rss__item-excerpt,
 .wp-block-rss .wp-block-rss__item-full-content {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	margin-top: 20px;
 }
 
@@ -1769,9 +1762,9 @@ pre.wp-block-preformatted {
 .wp-block-search .wp-block-search__input {
 	border: 3px solid #39414d;
 	border-radius: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.125rem;
-	line-height: 1.7;
+	line-height: 1.6;
 	max-width: inherit;
 	margin-right: -2px;
 	padding: 10px;
@@ -1792,7 +1785,7 @@ pre.wp-block-preformatted {
 	border-radius: 0;
 	cursor: pointer;
 	font-weight: 500;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 	line-height: 1.5;
 	padding: 15px 38px;
@@ -2008,7 +2001,7 @@ table tfoot,
 
 table th,
 .wp-block-table th {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 table td,
@@ -2177,7 +2170,7 @@ pre.wp-block-verse {
 :root .is-huge-text {
 	font-size: 5rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -2189,7 +2182,7 @@ pre.wp-block-verse {
 :root .has-huge-font-size {
 	font-size: 5rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -2201,7 +2194,7 @@ pre.wp-block-verse {
 :root .is-gigantic-text {
 	font-size: 8rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -2213,7 +2206,7 @@ pre.wp-block-verse {
 :root .has-gigantic-font-size {
 	font-size: 8rem;
 	line-height: 1.3;
-	font-weight: 400;
+	font-weight: 500;
 }
 @media only screen and (min-width: 652px) {
 
@@ -2247,9 +2240,9 @@ pre.wp-block-verse {
 
 .wp-block.editor-post-title__block .editor-post-title__input {
 	color: #39414d;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 4rem;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 1.1;
 }
 @media only screen and (min-width: 652px) {
@@ -2260,7 +2253,7 @@ pre.wp-block-verse {
 }
 
 .wp-block.block-editor-default-block-appender > textarea {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-size: 1.25rem;
 }
 
@@ -2361,7 +2354,7 @@ pre.wp-block-verse {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 	font-weight: 700;
 	line-height: 0.66;
 	text-transform: uppercase;
@@ -2400,12 +2393,12 @@ pre.wp-block-verse {
 }
 
 html {
-	line-height: 1.7;
+	line-height: 1.6;
 }
 
 html,
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Flama";
 }
 
 body {

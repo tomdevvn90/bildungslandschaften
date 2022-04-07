@@ -1,0 +1,211 @@
+@font-face {
+	font-family: "Belluga";
+	src: url("Belluga/Belluga.eot");
+	src:
+		url("Belluga/Belluga.eot?#iefix") format("embedded-opentype"),
+		url("Belluga/Belluga.woff2") format("woff2"),
+		url("Belluga/Belluga.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/*==========*/
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Black.woff2") format("woff2"),
+		url("Flama/Flama-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-BlackItalic.woff2") format("woff2"),
+		url("Flama/Flama-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Extrabold.woff2") format("woff2"),
+		url("Flama/Flama-Extrabold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-ExtraboldItalic.woff2") format("woff2"),
+		url("Flama/Flama-ExtraboldItalic.woff") format("woff");
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Bold.woff2") format("woff2"),
+		url("Flama/Flama-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-BoldItalic.woff2") format("woff2"),
+		url("Flama/Flama-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Semibold.woff2") format("woff2"),
+		url("Flama/Flama-Semibold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-SemiboldItalic.woff2") format("woff2"),
+		url("Flama/Flama-SemiboldItalic.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-MediumItalic.woff2") format("woff2"),
+		url("Flama/Flama-MediumItalic.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Medium.woff2") format("woff2"),
+		url("Flama/Flama-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-BasicItalic.woff2") format("woff2"),
+		url("Flama/Flama-BasicItalic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Basic.woff2") format("woff2"),
+		url("Flama/Flama-Basic.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama Book";
+	src:
+		url("Flama/Flama-Book.woff2") format("woff2"),
+		url("Flama/Flama-Book.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama Book";
+	src:
+		url("Flama/Flama-BookItalic.woff2") format("woff2"),
+		url("Flama/Flama-BookItalic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Light.woff2") format("woff2"),
+		url("Flama/Flama-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-LightItalic.woff2") format("woff2"),
+		url("Flama/Flama-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Ultralight.woff2") format("woff2"),
+		url("Flama/Flama-Ultralight.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-UltralightItalic.woff2") format("woff2"),
+		url("Flama/Flama-UltralightItalic.woff") format("woff");
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-ThinItalic.woff2") format("woff2"),
+		url("Flama/Flama-ThinItalic.woff") format("woff");
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Flama";
+	src:
+		url("Flama/Flama-Thin.woff2") format("woff2"),
+		url("Flama/Flama-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}

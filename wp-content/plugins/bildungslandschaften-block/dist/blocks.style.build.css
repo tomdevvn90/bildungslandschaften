@@ -430,27 +430,28 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.bild-button-item-block:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-15px, 15px);
+      -ms-transform: translate(-15px, 15px);
+          transform: translate(-15px, 15px);
+  background: #7EBFCC;
+  border: solid 1px var(--dark, #161614);
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
 .bild-button-item-block {
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
   margin-bottom: 15px;
   margin-left: 15px; }
-  .bild-button-item-block:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    -webkit-transform: translate(-15px, 15px);
-        -ms-transform: translate(-15px, 15px);
-            transform: translate(-15px, 15px);
-    background: #7EBFCC;
-    border: solid 1px var(--dark, #161614);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s; }
   .bild-button-item-block .bild-btn {
     padding: 16px 26px;
     border-radius: 0;
@@ -512,27 +513,28 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.bild-map-selector-block .btn-info-map-selector:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-15px, 15px);
+      -ms-transform: translate(-15px, 15px);
+          transform: translate(-15px, 15px);
+  background: #7EBFCC;
+  border: solid 1px var(--dark, #161614);
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
 .bild-map-selector-block .btn-info-map-selector {
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
   margin-bottom: 15px;
   margin-left: 15px; }
-  .bild-map-selector-block .btn-info-map-selector:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    -webkit-transform: translate(-15px, 15px);
-        -ms-transform: translate(-15px, 15px);
-            transform: translate(-15px, 15px);
-    background: #7EBFCC;
-    border: solid 1px var(--dark, #161614);
-    width: 100%;
-    height: 100%;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s; }
   .bild-map-selector-block .btn-info-map-selector .bild-btn {
     padding: 16px 26px;
     border-radius: 0;
@@ -636,3 +638,55 @@
           background: #fdc941; }
   .bild-map-selector-block .btn-info-map-selector {
     margin-top: 30px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.bild-card-item-people .inner-card .img-wrap:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-15px, 15px);
+      -ms-transform: translate(-15px, 15px);
+          transform: translate(-15px, 15px);
+  background: #7EBFCC;
+  border: solid 1px var(--dark, #161614);
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
+.bild-card-item-people .inner-card .img-wrap {
+  position: relative;
+  padding-bottom: calc(100% - 15px);
+  margin-bottom: 1.5rem;
+  margin-left: 15px; }
+  .bild-card-item-people .inner-card .img-wrap img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: solid 1px var(--dark, #161614);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s; }
+    .bild-card-item-people .inner-card .img-wrap img:hover {
+      -webkit-transform: translate(-5px, 5px);
+          -ms-transform: translate(-5px, 5px);
+              transform: translate(-5px, 5px); }
+
+.bild-card-item-people .inner-card .card-content {
+  padding: 1.5rem; }
+  .bild-card-item-people .inner-card .card-content .h3, .bild-card-item-people .inner-card .card-content .card-item-people-name {
+    font-size: 2rem;
+    font-family: "Belluga";
+    margin: 0;
+    margin-bottom: 10px; }

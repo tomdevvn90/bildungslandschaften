@@ -390,6 +390,11 @@ function twenty_twenty_one_content_width() {
 }
 add_action( 'after_setup_theme', 'twenty_twenty_one_content_width', 0 );
 
+function bild_enqueue_custom_admin_style() {
+	wp_enqueue_style( 'twenty-twenty-one-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'admin_enqueue_scripts', 'bild_enqueue_custom_admin_style' );
+
 /**
  * Enqueue scripts and styles.
  *
@@ -401,6 +406,8 @@ function twenty_twenty_one_scripts() {
 	// Note, the is_IE global variable is defined by WordPress and is used
 	// to detect if the current browser is internet explorer.
 	global $is_IE, $wp_scripts;
+	wp_enqueue_style( 'twenty-twenty-one-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), wp_get_theme()->get( 'Version' ) );
+
 	if ( $is_IE ) {
 		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables.
 		wp_enqueue_style( 'twenty-twenty-one-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );

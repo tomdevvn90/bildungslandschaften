@@ -18,3 +18,4 @@ import './blocks/bild-heading-stroke-block';
 import './blocks/bild-video-block';
 import './blocks/bild-button-block';
 import './blocks/bild-map-selector-block';
+import './blocks/bild-card-item-people';

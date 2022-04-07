@@ -47,12 +47,7 @@ $accentColor: #7ebfcc;
   }
 }
 
-%btn-style{
-display: inline-flex;
-  position: relative;
-  margin-bottom: 15px;
-  margin-left: 15px;
-
+%btn-style-before {
   &:before {
 	position: absolute;
 	content: '';
@@ -65,6 +60,14 @@ display: inline-flex;
 	height: 100%;
 	transition: .3s;
   }
+}
+
+%btn-style {
+  display: inline-flex;
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  @extend %btn-style-before;
 
   .bild-btn {
 	padding: 16px 26px;
@@ -107,7 +110,8 @@ display: inline-flex;
 	  opacity: 1;
 	  transform: translate(-5px, 5px);
 	}
-	&:before{
+
+	&:before {
 	  opacity: .6;
 	}
   }
