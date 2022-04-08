@@ -186,3 +186,9 @@ Editor style
     border-radius: 0; }
     .bild-card-item-people .inner-card .img-wrap button.components-button:hover {
       opacity: .8; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/

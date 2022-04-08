@@ -690,3 +690,80 @@
     font-family: "Belluga";
     margin: 0;
     margin-bottom: 10px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.bild-item-download .inner-item .icon-wrap:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-15px, 15px);
+      -ms-transform: translate(-15px, 15px);
+          transform: translate(-15px, 15px);
+  background: #7EBFCC;
+  border: solid 1px var(--dark, #161614);
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
+.bild-item-download .inner-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  text-decoration: none; }
+  .bild-item-download .inner-item > .file-name {
+    -ms-flex: 1;
+        flex: 1; }
+    .bild-item-download .inner-item > .file-name h3, .bild-item-download .inner-item > .file-name h4, .bild-item-download .inner-item > .file-name h2 {
+      font-size: 30px;
+      font-weight: normal; }
+  .bild-item-download .inner-item .icon-wrap {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 30px;
+    -ms-flex: 0 0 100px;
+        flex: 0 0 100px; }
+    .bild-item-download .inner-item .icon-wrap:before {
+      -webkit-transform: translate(-5px, 5px);
+          -ms-transform: translate(-5px, 5px);
+              transform: translate(-5px, 5px);
+      background: #7EBFCC; }
+    .bild-item-download .inner-item .icon-wrap .inner-icon {
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 1px solid var(--dark);
+      padding: 20px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      position: relative; }
+      .bild-item-download .inner-item .icon-wrap .inner-icon svg {
+        height: 100%;
+        width: auto;
+        -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+                transform: rotate(0);
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+  .bild-item-download .inner-item:hover .icon-wrap .inner-icon svg {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  .bild-item-download .inner-item:hover .icon-wrap:before {
+    background: #CC681E; }

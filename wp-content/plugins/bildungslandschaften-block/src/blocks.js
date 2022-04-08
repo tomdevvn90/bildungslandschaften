@@ -19,3 +19,4 @@ import './blocks/bild-video-block';
 import './blocks/bild-button-block';
 import './blocks/bild-map-selector-block';
 import './blocks/bild-card-item-people';
+import './blocks/bild-item-download';

@@ -67,7 +67,6 @@ const Edit = ( props ) => {
 		imgUrl,
 		imgID,
 	} = attributes;
-	console.log( attributes );
 
 	return (
 		<Fragment>
