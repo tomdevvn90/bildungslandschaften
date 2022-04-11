@@ -42,7 +42,7 @@ const isLayout = ( layout )=>{
 	};
 };
 registerBlockType( 'bild-block/bild-button', {
-	title: __( 'Button - Bild Blocks' ),
+	title: __( 'Button - Bild Block' ),
 	description: __( 'Prompt visitors to take action with a button-style link.' ),
 	icon: 'button',
 	category: 'common',

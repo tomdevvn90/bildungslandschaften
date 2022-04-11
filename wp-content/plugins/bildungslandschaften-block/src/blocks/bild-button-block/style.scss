@@ -15,5 +15,10 @@
 }
 
 .bild-button-item-block {
+  width: auto;
   @extend %btn-style;
+
+  &.__is-fullwidth {
+	width: 100%;
+  }
 }

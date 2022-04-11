@@ -80,12 +80,13 @@ $accentColor: #7ebfcc;
 	display: inline-flex;
 	align-items: center;
 	text-decoration: none;
-	text-align: center;
+	//text-align: center;
 	transition: 0.3s;
 	position: relative;
 	transform: translate(0, 0);
 	min-width: 200px;
 	justify-content: space-between;
+	width: inherit;
 
 	.bild-btn-text {
 	  margin-right: 15px;

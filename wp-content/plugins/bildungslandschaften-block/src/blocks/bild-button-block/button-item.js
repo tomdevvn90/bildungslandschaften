@@ -49,6 +49,10 @@ const BlockAttrs = {
 		type: 'boolean',
 		default: true,
 	},
+	fullWidth: {
+		type: 'boolean',
+		default: false,
+	},
 	// fullwidth: {
 	// 	type: 'boolean',
 	// 	default: false,
@@ -74,7 +78,7 @@ const BlockAttrs = {
 const Edit = ( props ) => {
 	const { attributes, setAttributes, isSelected, className, clientId } = props;
 	//console.log(props)
-	const { openNewTab, urlButton, textButton,showIconArrow} = attributes;
+	const { openNewTab, urlButton, textButton, showIconArrow, fullWidth } = attributes;
 
 	return (
 		<Fragment>
@@ -82,8 +86,13 @@ const Edit = ( props ) => {
 				<PanelBody title={ __( 'General', 'block' ) }>
 					<ToggleControl
 						label={ __( 'Show arrow icon', 'block' ) }
-						checked={   showIconArrow }
+						checked={ showIconArrow }
 						onChange={ () => setAttributes( { showIconArrow: ! showIconArrow } ) }
+					/>
+					<ToggleControl
+						label={ __( 'Buton fullwidth', 'block' ) }
+						checked={ fullWidth }
+						onChange={ () => setAttributes( { fullWidth: ! fullWidth } ) }
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Button link', 'block' ) }>
@@ -110,7 +119,7 @@ const Edit = ( props ) => {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={ [ 'bild-button-item-block', 'block-editor', className ].join( ' ' ) }>
+			<div className={ [ 'bild-button-item-block', 'block-editor', fullWidth ? '__is-fullwidth' : '', className ].join( ' ' ) }>
 				<span className="bild-btn">
 					<RichText
 						tagName="span"
@@ -120,7 +129,7 @@ const Edit = ( props ) => {
 						onChange={ ( value ) => setAttributes( { textButton: value } ) }
 						placeholder={ __( 'Button text' ) }
 					/>
-					{showIconArrow&&
+					{ showIconArrow &&
 					<span className="__icon">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
 					</span>
@@ -149,11 +158,11 @@ export default registerBlockType( 'bild-block/bild-button-item', {
 	save: function( props ) {
 		const { attributes, className } = props;
 		const {
-			openNewTab, urlButton, textButton,showIconArrow
+			openNewTab, urlButton, textButton, showIconArrow, fullWidth,
 		} = attributes;
 
 		return (
-			<div className={ [ 'bild-button-item-block', className ].join( ' ' ) }>
+			<div className={ [ 'bild-button-item-block', fullWidth ? '__is-fullwidth' : '', className ].join( ' ' ) }>
 				<a className="bild-btn"
 					href={ urlButton }
 					rel="noopener noreferrer"
@@ -164,7 +173,7 @@ export default registerBlockType( 'bild-block/bild-button-item', {
 						className="bild-btn-text"
 						value={ textButton }
 					/>
-					{showIconArrow&&
+					{ showIconArrow &&
 					<span className="__icon">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
 					</span>
