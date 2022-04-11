@@ -14,4 +14,9 @@
         </svg>
     </a>
 <?php
-the_title('<h1 class="entry-title">', '</h1>');
+if ( is_home() ) {?>
+    <h1 class="entry-title"><?php single_post_title(); ?></h1>
+	<?php
+} else {
+	the_title( '<h1 class="entry-title">', '</h1>' );
+}

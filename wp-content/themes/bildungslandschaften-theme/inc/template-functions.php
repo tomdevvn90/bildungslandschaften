@@ -154,7 +154,7 @@ function twenty_twenty_one_continue_reading_link_excerpt() {
 }
 
 // Filter the excerpt more link.
-add_filter( 'excerpt_more', 'twenty_twenty_one_continue_reading_link_excerpt' );
+//add_filter( 'excerpt_more', 'twenty_twenty_one_continue_reading_link_excerpt' );
 
 /**
  * Creates the continue reading link.

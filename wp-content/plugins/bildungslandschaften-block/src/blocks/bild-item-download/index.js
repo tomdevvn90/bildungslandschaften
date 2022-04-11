@@ -28,8 +28,8 @@ import {
 const TEMPLATE = [
 	[ 'core/heading', {
 		level: 3,
-		placeholder: 'File name...',
-		content: 'File name',
+		placeholder: 'Filename...',
+		content: 'Filename',
 	} ],
 ];
 
