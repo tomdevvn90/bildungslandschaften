@@ -3,7 +3,7 @@
   //@extend %responsive-alignwide-width;
   //display: flex;
   //align-items: flex-start;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   row-gap: var(--global--spacing-vertical); // Add space in case the menu wraps below the site branding.
   position: fixed;
   top: 30px;
@@ -15,6 +15,9 @@
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
+  @include media(laptop-only){
+    padding: 15px;
+  }
 
   .wp-custom-logo & {
     align-items: center;
@@ -88,6 +91,9 @@
 
     .btn-toolbox {
       margin-right: 2em;
+      @include media(laptop-only){
+        display: none;
+      }
     }
   }
 }
@@ -95,7 +101,7 @@
 // Site branding
 .site-branding {
   color: var(--branding--color-text);
-  margin-right: 140px;
+  margin-right: 30px;
   opacity: 0;
   transform: translateX(-100px);
   @include __transition();
@@ -109,7 +115,7 @@
   }
 
   @include media(mobile) {
-    margin-right: initial;
+    //margin-right: initial;
     //margin-top: 4px; // Align the baseline of the site title with the primary menu
   }
 }
@@ -174,7 +180,7 @@
   .custom-logo {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--branding--logo--max-width-mobile);
+    //max-width: var(--branding--logo--max-width-mobile);
     max-height: var(--branding--logo--max-height-mobile);
     height: auto;
     display: inline-block;

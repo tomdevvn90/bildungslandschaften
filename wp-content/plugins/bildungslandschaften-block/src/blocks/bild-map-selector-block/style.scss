@@ -8,6 +8,14 @@
   grid-gap: 20px;
   &:not(.__hide-button){
 	grid-template-columns: 1fr 1fr;
+	@include media-breakpoint-down('xs'){
+	  grid-template-columns: 1fr;
+	  .info-wrap{
+		grid-column: 1;
+		grid-row: 1;
+		grid-gap: 30px;
+	  }
+	}
   }
   &.__reverse-column{
 	.info-wrap {

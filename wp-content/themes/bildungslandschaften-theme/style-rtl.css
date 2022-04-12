@@ -1716,6 +1716,8 @@ a:hover {
  * Button
  */
 .site .button,
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox,
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox,
 button,
 input[type=submit],
 input[type=reset],
@@ -1735,6 +1737,8 @@ input[type=reset],
 }
 
 .site .button:not(:hover):not(:active):not(.has-text-color),
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:not(:hover):not(:active):not(.has-text-color),
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:not(:hover):not(:active):not(.has-text-color),
 button:not(:hover):not(:active):not(.has-text-color),
 input[type=submit]:not(:hover):not(:active):not(.has-text-color),
 input[type=reset]:not(:hover):not(:active):not(.has-text-color),
@@ -1745,6 +1749,8 @@ input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-text-color),
+.has-background .site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:not(:hover):not(:active):not(.has-text-color),
+.navigation-wrap .menu-container-wrap .menu_header .has-background .site .btn-toolbox:not(:hover):not(:active):not(.has-text-color),
 .has-background button:not(:hover):not(:active):not(.has-text-color),
 .has-background input[type=submit]:not(:hover):not(:active):not(.has-text-color),
 .has-background input[type=reset]:not(:hover):not(:active):not(.has-text-color),
@@ -1755,6 +1761,8 @@ input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-text-color).has-background,
+.has-background .site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:not(:hover):not(:active):not(.has-text-color).has-background,
+.navigation-wrap .menu-container-wrap .menu_header .has-background .site .btn-toolbox:not(:hover):not(:active):not(.has-text-color).has-background,
 .has-background button:not(:hover):not(:active):not(.has-text-color).has-background,
 .has-background input[type=submit]:not(:hover):not(:active):not(.has-text-color).has-background,
 .has-background input[type=reset]:not(:hover):not(:active):not(.has-text-color).has-background,
@@ -1765,6 +1773,8 @@ input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 }
 
 .site .button:not(:hover):not(:active):not(.has-background),
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:not(:hover):not(:active):not(.has-background),
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:not(:hover):not(:active):not(.has-background),
 button:not(:hover):not(:active):not(.has-background),
 input[type=submit]:not(:hover):not(:active):not(.has-background),
 input[type=reset]:not(:hover):not(:active):not(.has-background),
@@ -1775,6 +1785,8 @@ input[type=reset]:not(:hover):not(:active):not(.has-background),
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-background),
+.has-background .site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:not(:hover):not(:active):not(.has-background),
+.navigation-wrap .menu-container-wrap .menu_header .has-background .site .btn-toolbox:not(:hover):not(:active):not(.has-background),
 .has-background button:not(:hover):not(:active):not(.has-background),
 .has-background input[type=submit]:not(:hover):not(:active):not(.has-background),
 .has-background input[type=reset]:not(:hover):not(:active):not(.has-background),
@@ -1785,7 +1797,11 @@ input[type=reset]:not(:hover):not(:active):not(.has-background),
 }
 
 .site .button:hover,
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:hover,
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:hover,
 .site .button:active,
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:active,
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:active,
 button:hover,
 button:active,
 input[type=submit]:hover,
@@ -1804,6 +1820,8 @@ input[type=reset]:active,
 }
 
 .site .button:focus,
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:focus,
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:focus,
 button:focus,
 input[type=submit]:focus,
 input[type=reset]:focus,
@@ -1815,6 +1833,8 @@ input[type=reset]:focus,
 }
 
 .site .button:disabled,
+.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:disabled,
+.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:disabled,
 button:disabled,
 input[type=submit]:disabled,
 input[type=reset]:disabled,
@@ -3768,7 +3788,6 @@ table.wp-calendar-table caption {
 
 /* Category 06 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ... */
 .site-header {
-	flex-wrap: wrap;
 	row-gap: var(--global--spacing-vertical);
 	position: fixed;
 	top: 30px;
@@ -3780,6 +3799,12 @@ table.wp-calendar-table caption {
 	justify-content: space-between;
 	align-items: center;
 	pointer-events: none;
+}
+@media only screen and (max-width: 651px) {
+
+	.site-header {
+		padding: 15px;
+	}
 }
 
 .wp-custom-logo .site-header {
@@ -3866,10 +3891,16 @@ table.wp-calendar-table caption {
 .site-header .menu-button-container .btn-toolbox {
 	margin-left: 2em;
 }
+@media only screen and (max-width: 651px) {
+
+	.site-header .menu-button-container .btn-toolbox {
+		display: none;
+	}
+}
 
 .site-branding {
 	color: var(--branding--color-text);
-	margin-left: 140px;
+	margin-left: 30px;
 	opacity: 0;
 	transform: translateX(100px);
 	opacity: 0;
@@ -3889,12 +3920,6 @@ table.wp-calendar-table caption {
 	margin-left: 0;
 	width: 100%;
 	text-align: center;
-}
-@media only screen and (min-width: 482px) {
-
-	.site-branding {
-		margin-left: initial;
-	}
 }
 
 .site-title {
@@ -3955,7 +3980,6 @@ table.wp-calendar-table caption {
 .site-logo .custom-logo {
 	margin-right: auto;
 	margin-left: auto;
-	max-width: var(--branding--logo--max-width-mobile);
 	max-height: var(--branding--logo--max-height-mobile);
 	height: auto;
 	display: inline-block;
@@ -4737,10 +4761,26 @@ h1.page-title {
 .navigation-wrap .menu-container-wrap .primary-menu-container {
 	padding: 30px 60px 60px 50px;
 }
+@media only screen and (max-width: 651px) {
+
+	.navigation-wrap .menu-container-wrap .menu_header,
+	.navigation-wrap .menu-container-wrap .menu_footer,
+	.navigation-wrap .menu-container-wrap .primary-menu-container {
+		padding: 30px 20px 40px 20px;
+	}
+}
 
 .navigation-wrap .menu-container-wrap .menu_header {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
+}
+@media only screen and (min-width: 652px) {
+
+	.navigation-wrap .menu-container-wrap .menu_header .btn-toolbox {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
 }
 
 .navigation-wrap .menu-container-wrap .menu_header .close_menu_btn {
@@ -5925,6 +5965,12 @@ footer {
 
 #page {
 	padding-top: 250px;
+}
+@media only screen and (max-width: 651px) {
+
+	#page {
+		padding-top: 150px;
+	}
 }
 
 .lock-scrolling {

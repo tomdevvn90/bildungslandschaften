@@ -77,8 +77,11 @@ jQuery( function( $ ) {
 	};
 
 	const MapSelector = () => {
-		const $wrap = $( '.bild-map-selector-block' ),
-			$btnMapSelectorWrap = $wrap.find( '.btn-info-map-selector' ),
+		const $wrap = $( '.bild-map-selector-block' );
+		if ( ! $wrap.length ) {
+			return;
+		}
+		const $btnMapSelectorWrap = $wrap.find( '.btn-info-map-selector' ),
 			$btnMapSelector = $btnMapSelectorWrap.find( '.bild-btn' ),
 			$btnMapSelectorTextWrap = $btnMapSelectorWrap.find( '.bild-btn-text' ),
 			$selectorsPointer = $wrap.find( '.pointer-selectors' ),
@@ -93,8 +96,15 @@ jQuery( function( $ ) {
 		$selectorsPointerItem.on( 'mouseenter click', function( e ) {
 			e.preventDefault();
 			const data = $( this ).data( 'map' );
-			$btnMapSelectorTextWrap.text( data.title );
-			$btnMapSelector.attr( 'href', data.link );
+			$btnMapSelectorTextWrap.text( data?.title );
+			$btnMapSelector.attr( 'href', data?.link );
+		} );
+		$selectorsPointerItem.on( 'click', function( e ) {
+			e.preventDefault();
+			const data = $( this ).data( 'map' );
+			if ( data?.link ) {
+				window.location.href = data.link;
+			}
 		} );
 	};
 

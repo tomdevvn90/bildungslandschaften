@@ -53,18 +53,6 @@ function bildungslandschaften_block_cgb_block_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
-	wp_enqueue_script( 'slick-js', plugins_url( 'assets/lib/slick/slick.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '1.8.1', true );
-	wp_enqueue_style( 'slick', plugins_url( 'assets/lib/slick/slick.css', dirname( __FILE__ ) ), false, '1.8.1' );
-	wp_enqueue_style( 'slick-theme', plugins_url( 'assets/lib/slick/slick-theme.css', dirname( __FILE__ ) ), false, '1.8.1' );
-
-	wp_enqueue_script( 'bil-plugin', plugins_url( 'assets/js/functions.min.js', dirname( __FILE__ ) ),
-		array( 'jquery' ), '1.0.0', true );
-	wp_localize_script( 'bil-plugin', 'cgbGlobal', [
-		'pluginDirPath' => plugin_dir_path( __DIR__ ),
-		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
-		'ajax_url'      => admin_url( 'admin-ajax.php' ),
-	] );
-
 	/**
 	 * Register Gutenberg block on server-side.
 	 *
@@ -95,3 +83,19 @@ function bildungslandschaften_block_cgb_block_assets() { // phpcs:ignore
 
 // Hook: Block assets.
 add_action( 'init', 'bildungslandschaften_block_cgb_block_assets' );
+
+function bild_plg_enqueue_script() {
+	wp_enqueue_script( 'slick-js', plugins_url( 'assets/lib/slick/slick.min.js', dirname( __FILE__ ) ), array( 'jquery' ), '1.8.1', true );
+	wp_enqueue_style( 'slick', plugins_url( 'assets/lib/slick/slick.css', dirname( __FILE__ ) ), false, '1.8.1' );
+	wp_enqueue_style( 'slick-theme', plugins_url( 'assets/lib/slick/slick-theme.css', dirname( __FILE__ ) ), false, '1.8.1' );
+
+	wp_enqueue_script( 'bil-plugin', plugins_url( 'assets/js/functions.min.js', dirname( __FILE__ ) ),
+		array( 'jquery' ), '1.0.0', true );
+	wp_localize_script( 'bil-plugin', 'cgbGlobal', [
+		'pluginDirPath' => plugin_dir_path( __DIR__ ),
+		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
+		'ajax_url'      => admin_url( 'admin-ajax.php' ),
+	] );
+}
+
+add_action( 'wp_enqueue_scripts', 'bild_plg_enqueue_script' );

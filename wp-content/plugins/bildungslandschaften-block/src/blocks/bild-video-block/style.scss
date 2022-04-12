@@ -28,6 +28,9 @@
 	background: #7ebfcc;
 	padding-bottom: 56.25%;
 	overflow: hidden;
+	@include media-breakpoint-down('xs') {
+	  transform: translate(15px, -15px);
+	}
 
 	video, iframe {
 	  width: 100%;
@@ -63,6 +66,9 @@
 
 	> .video-wrap {
 	  transform: translate(30px, -30px) scale(1.01);
+	  @include media-breakpoint-down('xs') {
+		transform: translate(15px, -15px) scale(1.01);
+	  }
 	}
   }
 }

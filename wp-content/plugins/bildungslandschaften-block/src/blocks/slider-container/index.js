@@ -330,7 +330,7 @@ const Save = ( { attributes, className, clientId } ) => {
 
 export default registerBlockType( 'my-blocks/slider-container', {
 	title: __( 'Slide Container' ),
-	category: 'aut-blocks',
+	category: 'common',
 	icon: 'slides',
 	keywords: [
 		__( 'slider' ),

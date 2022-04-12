@@ -164,7 +164,7 @@ const Save = ( { attributes, className, clientId } ) => {
 
 export default registerBlockType( 'my-block/grid-container', {
 	title: __( 'Grid Container' ),
-	category: 'aut-blocks',
+	category: 'common',
 	icon: 'grid-view',
 	keywords: [
 		__( 'grid' ),

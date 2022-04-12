@@ -12,6 +12,9 @@
 
 #page {
   padding-top: 250px;
+  @include media(laptop-only) {
+    padding-top: 150px;
+  }
 }
 
 .lock-scrolling {

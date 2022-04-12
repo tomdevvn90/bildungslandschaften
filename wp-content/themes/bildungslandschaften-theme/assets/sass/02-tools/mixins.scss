@@ -136,6 +136,7 @@
   margin-bottom: 15px;
   margin-left: 15px;
   @extend %btn-style-before;
+  $dark: #161614;
 
   .bild-btn {
     padding: 16px 26px;
@@ -143,24 +144,25 @@
     line-height: normal;
     font-weight: 500;
     background-color: white;
-    color: var(--dark, #161614FF);
-    border: solid 1px var(--dark, #161614FF);
+    color: var(--dark, $dark);
+    border: solid 1px var(--dark, $dark);
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    text-align: center;
+    //text-align: center;
     transition: 0.3s;
     position: relative;
     transform: translate(0, 0);
     min-width: 200px;
     justify-content: space-between;
+    width: inherit;
 
     .bild-btn-text {
-      margin-right: 15px;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
     }
 
     .__icon {
+      margin-left: 15px;
       display: inline-flex;
 
       svg {

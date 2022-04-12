@@ -68,11 +68,23 @@
 
     .menu_header, .menu_footer, .primary-menu-container {
       padding: 30px 50px 60px 60px;
+      @include media(laptop-only) {
+        padding: 30px 20px 40px 20px;
+      }
     }
 
     .menu_header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+
+      .btn-toolbox {
+        @extend .button;
+        @include media(laptop) {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
 
       .close_menu_btn {
         width: 63px;
@@ -90,7 +102,7 @@
     }
 
     // Mobile menu closed
-     .primary-menu-container {
+    .primary-menu-container {
       opacity: 0;
       transform: translateX(200px);
       transition: all 1s cubic-bezier(0.9, 0, 0.5, 1.2);

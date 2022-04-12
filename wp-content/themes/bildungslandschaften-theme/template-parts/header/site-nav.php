@@ -7,13 +7,21 @@
  * @since Twenty Twenty-One 1.0
  */
 
+$header_btn      = __get_field( 'header_toolbox_button', 'option' );
 ?>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
 	<div id="site-navigation" class="navigation-wrap">
         <div class="resp_menu_dark"></div>
         <div class="menu-container-wrap">
-            <div class="menu_header"><div class="close_menu_btn"></div></div>
+            <div class="menu_header">
+	            <?php
+	            if ( $header_btn['enable'] ) {
+		            echo '<a href="' . $header_btn['button_link'] . '" class="button btn-toolbox">' . $header_btn['button_text'] . '</a>';
+	            }
+	            ?>
+                <div class="close_menu_btn"></div>
+            </div>
             <nav class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'bildungslandschaften' ); ?>">
                 <?php
                 wp_nav_menu(
