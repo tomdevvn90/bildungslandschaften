@@ -8,7 +8,10 @@
 				grid-template-columns: repeat(var(--cols-tablet, 2), 1fr);
 			}
 			@include media-breakpoint-down(sm) {
-				grid-template-columns: repeat(var(--cols-mobile, 1), 1fr);
+				grid-template-columns: repeat(var(--cols-mobile, 2), 1fr);
+			}
+			@include media-breakpoint-down(xs) {
+				grid-template-columns: repeat(var(--cols-mobile-xs, 1), 1fr);
 			}
 		}
 	}

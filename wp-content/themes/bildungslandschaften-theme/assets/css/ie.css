@@ -4549,7 +4549,7 @@ h1.entry-title {
 .entry-header .entry-title {
 	transform: translateY(80px);
 	opacity: 0;
-	transition: all 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+	transition: transform, opacity 1s cubic-bezier(0.9, 0, 0.5, 1.2);
 	transition-delay: 0.5s;
 	will-change: transform;
 }

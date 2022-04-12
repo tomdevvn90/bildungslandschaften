@@ -41,6 +41,10 @@ const attr = {
 	},
 	colsMobile: {
 		type: 'number',
+		default: 2,
+	},
+	colsMobileXs: {
+		type: 'number',
 		default: 1,
 	},
 	gridGap: {
@@ -55,6 +59,7 @@ const Edit = ( props ) => {
 		cols,
 		colsTablet,
 		colsMobile,
+		colsMobileXs,
 		gridGap,
 	} = attributes;
 
@@ -82,7 +87,7 @@ const Edit = ( props ) => {
 						shiftStep={ 10 } value={ colsTablet }
 					/>
 					<hr />
-					<label>Grid column Mobile(0 -> 767px)</label>
+					<label>Grid column Mobile(575px -> 767px)</label>
 					<NumberControl
 						isShiftStepEnabled={ true }
 						onChange={ ( colsMobile ) => {
@@ -90,6 +95,16 @@ const Edit = ( props ) => {
 						} }
 						min={ 1 }
 						shiftStep={ 10 } value={ colsMobile }
+					/>
+					<hr />
+					<label>Grid column Mobile xs(0 -> 575px)</label>
+					<NumberControl
+						isShiftStepEnabled={ true }
+						onChange={ ( colsMobileXs ) => {
+							setAttributes( { colsMobileXs: parseInt( colsMobileXs ) } );
+						} }
+						min={ 1 }
+						shiftStep={ 10 } value={ colsMobileXs }
 					/>
 					<hr />
 					<TextControl
@@ -108,6 +123,7 @@ const Edit = ( props ) => {
 					 '--cols': `calc(${ parseInt( cols ) })`,
 					 '--cols-tablet': `calc(${ parseInt( colsTablet ) })`,
 					 '--cols-mobile': `calc(${ parseInt( colsMobile ) })`,
+					 '--cols-mobile-xs': `calc(${ parseInt( colsMobileXs ) })`,
 					 '--grid-gap': gridGap,
 				 } }>
 				<div className="inner-wrap">
@@ -126,6 +142,7 @@ const Save = ( { attributes, className, clientId } ) => {
 		cols,
 		colsTablet,
 		colsMobile,
+		colsMobileXs,
 		gridGap,
 	} = attributes;
 	return (
@@ -134,6 +151,7 @@ const Save = ( { attributes, className, clientId } ) => {
 				 '--cols': `calc(${ parseInt( cols ) })`,
 				 '--cols-tablet': `calc(${ parseInt( colsTablet ) })`,
 				 '--cols-mobile': `calc(${ parseInt( colsMobile ) })`,
+				 '--cols-mobile-xs': `calc(${ parseInt( colsMobileXs ) })`,
 				 '--grid-gap': gridGap,
 			 } }
 		>

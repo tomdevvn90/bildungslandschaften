@@ -62,7 +62,7 @@ h1.entry-title {
   .entry-title {
     opacity: 0;
     transform: translateY(80px);
-    @include __transition() {
+    @include __transition('transform,opacity') {
     }
 
   }
