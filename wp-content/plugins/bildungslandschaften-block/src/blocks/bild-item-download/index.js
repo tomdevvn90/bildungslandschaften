@@ -120,7 +120,7 @@ const Save = ( { attributes, className, clientId } ) => {
 };
 
 export default registerBlockType( 'bild-block/item-download', {
-	title: __( 'Item Download' ),
+	title: __( 'Item Download - Bild Block' ),
 	category: 'common',
 	icon: 'shield',
 	keywords: [

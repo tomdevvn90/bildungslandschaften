@@ -19,7 +19,7 @@ const TEMPLATE = [
 ];
 
 registerBlockType( 'cgb/custom-video-block', {
-	title: __( 'Custom Video Block' ), // Block title.
+	title: __( 'Custom Video Block - Bild Block' ), // Block title.
 	icon: 'shield',
 	category: 'common',
 	keywords: [

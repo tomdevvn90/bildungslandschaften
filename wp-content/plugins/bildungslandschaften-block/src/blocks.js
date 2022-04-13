@@ -20,4 +20,4 @@ import './blocks/bild-button-block';
 import './blocks/bild-map-selector-block';
 import './blocks/bild-card-item-people';
 import './blocks/bild-item-download';
-import './blocks/bild-paysages-locaux-block';
+//import './blocks/bild-paysages-locaux-block';

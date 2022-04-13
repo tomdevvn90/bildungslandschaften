@@ -86,13 +86,15 @@ jQuery( function( $ ) {
 			$btnMapSelectorTextWrap = $btnMapSelectorWrap.find( '.bild-btn-text' ),
 			$selectorsPointer = $wrap.find( '.pointer-selectors' ),
 			$selectorsPointerItem = $selectorsPointer.find( '.__pointer' ),
-			$selectorsPointerItemFirst = $selectorsPointer.find( '.__pointer' );
+			$selectorsPointerItemFirst = $selectorsPointer.find( '.__pointer' ),
+			$btnMapViewMenuIcon = $wrap.find( '.bild-view-menu-icon' );
 		if ( ! $selectorsPointerItem.length ) {
 			$btnMapSelectorWrap.hide();
 		}
 		const dataFirstItem = $selectorsPointerItemFirst.data( 'map' );
 		$btnMapSelectorTextWrap.text( dataFirstItem.title );
 		$btnMapSelector.attr( 'href', dataFirstItem.link );
+
 		$selectorsPointerItem.on( 'mouseenter click', function( e ) {
 			e.preventDefault();
 			const data = $( this ).data( 'map' );
@@ -105,6 +107,12 @@ jQuery( function( $ ) {
 			if ( data?.link ) {
 				window.location.href = data.link;
 			}
+		} );
+		$btnMapViewMenuIcon.on( 'click', 'a.menu-icon', function( e ) {
+			e.preventDefault();
+			$wrap.toggleClass( '__view-list __view-map' );
+			$btnMapViewMenuIcon.toggleClass( '__icon-list __icon-map' );
+			$( this ).html( $btnMapViewMenuIcon.hasClass( '__icon-map' ) ? '<span>CARTE</span>' : '<span>LISTE</span>' );
 		} );
 	};
 

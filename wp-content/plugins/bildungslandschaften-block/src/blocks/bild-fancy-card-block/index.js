@@ -10,7 +10,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 
 const { serverSideRender: ServerSideRender } = wp;
 registerBlockType( 'cgb/fancy-card-block', {
-	title: __( 'Fancy Card Block' ), // Block title.
+	title: __( 'Fancy Card Block - Bild Block' ), // Block title.
 	icon: 'shield',
 	category: 'common',
 	keywords: [

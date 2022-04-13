@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { Fragment, useEffect } from '@wordpress/element';
@@ -175,7 +176,7 @@ export default registerBlockType( 'bild-block/bild-button-item', {
 					/>
 					{ showIconArrow &&
 					<span className="__icon">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
 					</span>
 					}
 				</a>

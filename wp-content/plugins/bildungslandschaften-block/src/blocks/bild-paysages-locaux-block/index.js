@@ -115,7 +115,7 @@ const Save = ( { attributes, className, clientId } ) => {
 };
 
 export default registerBlockType( 'bild-block/bild-paysages-locaux-block', {
-	title: __( 'Les Paysages Locaux' ),
+	title: __( 'Les Paysages Locaux - Bild Block' ),
 	category: 'common',
 	icon: 'shield',
 	keywords: [

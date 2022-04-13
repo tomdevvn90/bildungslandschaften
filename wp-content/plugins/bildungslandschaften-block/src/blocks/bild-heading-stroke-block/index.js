@@ -24,7 +24,7 @@ const TEMPLATE = [
 ];
 
 registerBlockType( 'cgb/heading-stroke-block', {
-	title: __( 'Heading Stroke Block' ), // Block title.
+	title: __( 'Heading Stroke Block - Bild Block' ), // Block title.
 	icon: 'shield',
 	category: 'common',
 	keywords: [

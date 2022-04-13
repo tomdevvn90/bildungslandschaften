@@ -187,7 +187,7 @@ const Save = ( { attributes, className, clientId } ) => {
 };
 
 export default registerBlockType( 'bild-block/card-item-people', {
-	title: __( 'Card People' ),
+	title: __( 'Card People - Bild Block' ),
 	category: 'common',
 	icon: 'shield',
 	keywords: [

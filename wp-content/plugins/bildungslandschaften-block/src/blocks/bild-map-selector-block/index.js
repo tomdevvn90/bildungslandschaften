@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 //  Import CSS.
 import './editor.scss';
 import './style.scss';
@@ -17,6 +18,7 @@ import { PanelBody, FocalPointPicker, ResponsiveWrapper, Spinner,
 	ToggleControl, RangeControl,
 	__experimentalConfirmDialog as ConfirmDialog,
 	Button, Popover, Modal, TextControl, BaseControl,
+	SelectControl,
 } from '@wordpress/components';
 import { withSelect } from '@wordpress/data';
 import { useRef, useState } from '@wordpress/element';
@@ -71,11 +73,19 @@ const attr = {
 		type: 'boolean',
 		default: false,
 	},
+	changeView: {
+		type: 'boolean',
+		default: false,
+	},
+	defaultView: {
+		type: 'string',
+		default: 'map',
+	},
 };
 
 const Edit = ( props ) => {
 	const { attributes, setAttributes, className } = props;
-	const { bgID, bgUrl, listSelectors, reverseColumn, hideButtonColumn } = attributes;
+	const { bgID, bgUrl, listSelectors, reverseColumn, hideButtonColumn, changeView, defaultView } = attributes;
 	const instructions = <p>{ __( 'To edit the background image, you need permission to upload media.' ) }</p>;
 	const mapInnerEl = useRef( null );
 	const mapImgWrapEl = useRef( null );
@@ -132,6 +142,22 @@ const Edit = ( props ) => {
 			<InspectorControls>
 				<PanelBody
 					title={ __( 'General Settings' ) }>
+					<ToggleControl
+						label="Change View"
+						checked={ changeView }
+						onChange={ () => setAttributes( { changeView: ! changeView } ) }
+					/>
+					{ changeView &&
+						<SelectControl
+							label="Default view"
+							value={ defaultView }
+							options={ [
+								{ label: 'Map', value: 'map' },
+								{ label: 'List', value: 'list' },
+							] }
+							onChange={ ( value ) => setAttributes( { defaultView: value } ) }
+						/>
+					}
 					<ToggleControl
 						label="Reverse Column"
 						checked={ reverseColumn }
@@ -246,41 +272,49 @@ const Edit = ( props ) => {
 				reverseColumn ? '__reverse-column' : '',
 				className ].join( ' ' ) }
 			>
-				<div className="map-selector-wrap">
-					<div className="map-inner" ref={ mapInnerEl }
-						onMouseMove={ mapEventPointerDrag }
-						onMouseUp={ mapEventCloseDragPointer }
-					>
-						<div ref={ mapImgWrapEl } className="img-wrap" onClick={ mapEventClick }>
-							<img className="img-selector" src={ bgUrl } alt="img map" />
-						</div>
-						{ listSelectors.length > 0 && (
-							<div className="pointer-selectors">
-								{ listSelectors.map( ( e, i )=>{
-									return (
-										<div key={ 'po-' + i } title={ e.title }
-											style={ { '--x': e.x, '--y': e.y } } //onClick={ openModal }
-											onMouseDown={ ( event )=>mapEventPointerMouseDown( event, i ) }
-											className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
-									);
-								} ) }
+				{ changeView &&
+				<div className={ [ 'bild-view-menu-icon', defaultView === 'map' ? '__icon-map' : '__icon-list' ].join( ' ' ) }>
+					<a className="menu-icon" href="#">
+						<span>{ defaultView === 'map' ? 'Liste' : 'Carte' }</span>
+					</a>
+				</div> }
+				<div className="block-inner">
+					<div className="map-selector-wrap">
+						<div className="map-inner" ref={ mapInnerEl }
+							onMouseMove={ mapEventPointerDrag }
+							onMouseUp={ mapEventCloseDragPointer }
+						>
+							<div ref={ mapImgWrapEl } className="img-wrap" onClick={ mapEventClick }>
+								<img className="img-selector" src={ bgUrl } alt="img map" />
 							</div>
-						) }
-					</div>
-				</div>
-				{
-					! hideButtonColumn &&
-					<div className="info-wrap">
-						<div className="btn-info-map-selector">
-							<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
-								<span className="bild-btn-text">Info Map Button</span>
-								<span className="__icon">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
-								</span>
-							</a>
+							{ listSelectors.length > 0 && (
+								<div className="pointer-selectors">
+									{ listSelectors.map( ( e, i )=>{
+										return (
+											<div key={ 'po-' + i } title={ e.title }
+												style={ { '--x': e.x, '--y': e.y } } //onClick={ openModal }
+												onMouseDown={ ( event )=>mapEventPointerMouseDown( event, i ) }
+												className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
+										);
+									} ) }
+								</div>
+							) }
 						</div>
 					</div>
-				}
+					{
+						! hideButtonColumn &&
+						<div className="info-wrap">
+							<div className="btn-info-map-selector">
+								<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
+									<span className="bild-btn-text">Info Map Button</span>
+									<span className="__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
+									</span>
+								</a>
+							</div>
+						</div>
+					}
+				</div>
 			</div>
 		</Fragment>
 	);
@@ -296,46 +330,76 @@ registerBlockType( 'bild-block/bild-map-selector', {
 		align: [ 'full', 'wide' ],
 	},
 	save: ( { attributes, className } ) => {
-		const { bgUrl, listSelectors, reverseColumn, hideButtonColumn } = attributes;
+		const { bgUrl, listSelectors, reverseColumn, hideButtonColumn, defaultView, changeView } = attributes;
 
 		return (
 			<div className={ [
 				'bild-map-selector-block',
 				hideButtonColumn ? '__hide-button' : '',
 				reverseColumn ? '__reverse-column' : '',
+				defaultView ? '__view-' + defaultView : '',
 				className ].join( ' ' ) } >
-				<div className="map-selector-wrap">
-					<div className="map-inner">
-						<div className="img-wrap" >
-							<img className="img-selector" src={ bgUrl } alt="img map" />
-						</div>
-						{ listSelectors.length > 0 && (
-							<div className="pointer-selectors">
-								{ listSelectors.map( ( e, i )=>{
-									return (
-										<div key={ 'po-' + i } data-map={ JSON.stringify( e ) }
-											title={ e.title } style={ { '--x': e.x, '--y': e.y } }
-											className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
-									);
-								} ) }
-							</div>
-						) }
-					</div>
+				{ changeView &&
+				<div className={ [ 'bild-view-menu-icon', defaultView === 'map' ? '__icon-list' : '__icon-map' ].join( ' ' ) }>
+					<a className="menu-icon" href="#">
+						<span>{ defaultView === 'map' ? 'Liste' : 'Carte' }</span>
+					</a>
 				</div>
-				{
-					! hideButtonColumn &&
-					<div className="info-wrap">
-						<div className="btn-info-map-selector">
-							<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
-								<span className="bild-btn-text">Info Map Button</span>
-								<span className="__icon">
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path
-										fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"
-										d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
-								</span>
-							</a>
+				}
+				<div className="block-inner">
+					<div className="map-selector-wrap">
+						<div className="map-inner">
+							<div className="img-wrap" >
+								<img className="img-selector" src={ bgUrl } alt="img map" />
+							</div>
+							{ listSelectors.length > 0 && (
+								<div className="pointer-selectors">
+									{ listSelectors.map( ( e, i )=>{
+										return (
+											<div key={ 'po-' + i } data-map={ JSON.stringify( e ) }
+												title={ e.title } style={ { '--x': e.x, '--y': e.y } }
+												className={ [ '__pointer', e.active ? '__active' : '' ].join( ' ' ) }>{ i + 1 }</div>
+										);
+									} ) }
+								</div>
+							) }
 						</div>
 					</div>
+					{
+						! hideButtonColumn &&
+						<div className="info-wrap">
+							<div className="btn-info-map-selector">
+								<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
+									<span className="bild-btn-text">Info Map Button</span>
+									<span className="__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path
+											fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2"
+											d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
+									</span>
+								</a>
+							</div>
+						</div>
+					}
+				</div>
+				{ changeView &&
+				<div className="map-list-view">
+					{ listSelectors.length > 0 && (
+						listSelectors.map( ( e, i )=>{
+							return (
+								<div key={ 'po-l-' + i } data-map={ JSON.stringify( e ) } title={ e.title } className={ [ '__list-item', e.active ? '__active' : '' ].join( ' ' ) }>
+									<a className="bild-btn" href={ e.link } >
+										<span className="bild-btn-text">{ e.title }</span>
+										<span className="__icon">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68">
+												<g><path fill="transparent" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="m.71.71 43.13 43.13L.71 86.97" /></g>
+											</svg>
+										</span>
+									</a>
+								</div>
+							);
+						} )
+					) }
+				</div>
 				}
 			</div>
 		);
