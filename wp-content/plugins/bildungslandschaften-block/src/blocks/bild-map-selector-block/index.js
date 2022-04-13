@@ -81,11 +81,15 @@ const attr = {
 		type: 'string',
 		default: 'map',
 	},
+	pointerType: {
+		type: 'string',
+		default: 'default',
+	},
 };
 
 const Edit = ( props ) => {
 	const { attributes, setAttributes, className } = props;
-	const { bgID, bgUrl, listSelectors, reverseColumn, hideButtonColumn, changeView, defaultView } = attributes;
+	const { bgID, bgUrl, listSelectors, reverseColumn, hideButtonColumn, changeView, defaultView, pointerType } = attributes;
 	const instructions = <p>{ __( 'To edit the background image, you need permission to upload media.' ) }</p>;
 	const mapInnerEl = useRef( null );
 	const mapImgWrapEl = useRef( null );
@@ -167,6 +171,15 @@ const Edit = ( props ) => {
 						label="Hide Button Column"
 						checked={ hideButtonColumn }
 						onChange={ () => setAttributes( { hideButtonColumn: ! hideButtonColumn } ) }
+					/>
+					<SelectControl
+						label="Pointer Type"
+						value={ pointerType }
+						options={ [
+							{ label: 'Default', value: 'default' },
+							{ label: 'Style 1', value: 'type-1' },
+						] }
+						onChange={ ( value ) => setAttributes( { pointerType: value } ) }
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Setting Items' ) } initialOpen={ false }>
@@ -270,6 +283,7 @@ const Edit = ( props ) => {
 				'block-editor',
 				hideButtonColumn ? '__hide-button' : '',
 				reverseColumn ? '__reverse-column' : '',
+				pointerType !== 'default' ? '__pointer-' + pointerType : '',
 				className ].join( ' ' ) }
 			>
 				{ changeView &&
@@ -330,7 +344,7 @@ registerBlockType( 'bild-block/bild-map-selector', {
 		align: [ 'full', 'wide' ],
 	},
 	save: ( { attributes, className } ) => {
-		const { bgUrl, listSelectors, reverseColumn, hideButtonColumn, defaultView, changeView } = attributes;
+		const { bgUrl, listSelectors, reverseColumn, hideButtonColumn, defaultView, changeView, pointerType } = attributes;
 
 		return (
 			<div className={ [
@@ -338,6 +352,7 @@ registerBlockType( 'bild-block/bild-map-selector', {
 				hideButtonColumn ? '__hide-button' : '',
 				reverseColumn ? '__reverse-column' : '',
 				defaultView ? '__view-' + defaultView : '',
+				pointerType !== 'default' ? '__pointer-' + pointerType : '',
 				className ].join( ' ' ) } >
 				{ changeView &&
 				<div className={ [ 'bild-view-menu-icon', defaultView === 'map' ? '__icon-list' : '__icon-map' ].join( ' ' ) }>

@@ -100,9 +100,9 @@
   }
 }
 
-@mixin __transition($t : all, $loaded : true) {
+@mixin __transition($t : all 1s, $loaded : true) {
   opacity: 0;
-  transition: #{$t} 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+  transition: #{$t} cubic-bezier(0.9, 0, 0.5, 1.2);
   transition-delay: .5s;
   will-change: transform;
   @if $loaded == true {

@@ -117,8 +117,8 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 	--global--font-size-md: 1.25rem;
 	--global--font-size-lg: 1.5rem;
 	--global--font-size-xl: 2.25rem;
-	--global--font-size-xxl: 4rem;
-	--global--font-size-xxxl: 5rem;
+	--global--font-size-xxl: 3.25rem;
+	--global--font-size-xxxl: 4rem;
 	--global--font-size-page-title: var(--global--font-size-xxl);
 	--global--letter-spacing: normal;
 
@@ -4159,7 +4159,7 @@ h1.entry-title {
 	opacity: 0;
 	transform: translateY(80px);
 	opacity: 0;
-	transition: transform, opacity 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+	transition: transform 1s, opacity 1s cubic-bezier(0.9, 0, 0.5, 1.2);
 	transition-delay: 0.5s;
 	will-change: transform;
 }

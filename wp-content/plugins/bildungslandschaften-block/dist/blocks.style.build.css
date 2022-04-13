@@ -738,6 +738,32 @@
   .bild-map-selector-block .map-list-view .__list-item {
     width: 100%; }
 
+.bild-map-selector-block.__pointer-type-1 .block-inner .map-selector-wrap .map-inner .pointer-selectors .__pointer {
+  overflow: initial; }
+  .bild-map-selector-block.__pointer-type-1 .block-inner .map-selector-wrap .map-inner .pointer-selectors .__pointer:before {
+    width: 50px;
+    height: 50px;
+    content: '';
+    position: absolute;
+    background: white;
+    z-index: 2;
+    -webkit-transform: translate(5px, -5px);
+        -ms-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+    border-radius: 50%;
+    border: 1px solid var(--dark); }
+  .bild-map-selector-block.__pointer-type-1 .block-inner .map-selector-wrap .map-inner .pointer-selectors .__pointer:after {
+    content: '+';
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% + 5px);
+    color: black;
+    z-index: 3;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-weight: bold; }
+
 .bild-map-selector-block.__view-map .map-list-view {
   display: none; }
 

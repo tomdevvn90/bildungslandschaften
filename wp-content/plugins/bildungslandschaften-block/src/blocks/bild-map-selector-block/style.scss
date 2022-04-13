@@ -114,6 +114,7 @@
 			  transform: translate(-25px, -25px) scale(1.1);
 			  background: #fdc941;
 			}
+
 		  }
 		}
 	  }
@@ -132,10 +133,10 @@
 	animation: anm-view-map;
 	animation-duration: 1s;
 	animation-timing-function: ease;
-	@include media-breakpoint-down(sm){
+	@include media-breakpoint-down(sm) {
 	  grid-gap: 30px;
 	}
-	@include media-breakpoint-down('xs'){
+	@include media-breakpoint-down('xs') {
 	  grid-template-columns: 1fr;
 	}
 
@@ -144,6 +145,34 @@
 	  @extend %btn-style;
 
 	  > a.item-btn {
+	  }
+	}
+  }
+
+  &.__pointer-type-1 {
+	.block-inner .map-selector-wrap .map-inner .pointer-selectors .__pointer {
+	  overflow: initial;
+	  &:before {
+		width: 50px;
+		height: 50px;
+		content: '';
+		position: absolute;
+		background: white;
+		z-index: 2;
+		transform: translate(5px, -5px);
+		border-radius: 50%;
+		border: 1px solid var(--dark);
+	  }
+
+	  &:after {
+		content: '+';
+		position: absolute;
+		top: calc(50% - 5px);
+		left: calc(50% + 5px);
+		color: black;
+		z-index: 3;
+		transform: translate(-50%, -50%);
+		font-weight: bold;
 	  }
 	}
   }

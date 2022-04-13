@@ -840,7 +840,7 @@ h6[style*="--wp--typography--line-height"],
 }
 
 .wp-block-heading h1 {
-	font-size: 4rem;
+	font-size: 3.25rem;
 	letter-spacing: normal;
 	line-height: 1.1;
 }
@@ -853,7 +853,7 @@ h6[style*="--wp--typography--line-height"],
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.25rem;
 	letter-spacing: normal;
 	line-height: 1.1;
 }
@@ -866,7 +866,7 @@ h1 {
 }
 
 .h1 {
-	font-size: 4rem;
+	font-size: 3.25rem;
 	letter-spacing: normal;
 	line-height: 1.1;
 }
@@ -2241,7 +2241,7 @@ pre.wp-block-verse {
 .wp-block.editor-post-title__block .editor-post-title__input {
 	color: #39414d;
 	font-family: "Flama";
-	font-size: 4rem;
+	font-size: 3.25rem;
 	font-weight: 600;
 	line-height: 1.1;
 }
@@ -2361,7 +2361,7 @@ pre.wp-block-verse {
 	font-style: normal;
 	float: left;
 	margin: 0.1em 0.1em 0 0;
-	font-size: 5rem;
+	font-size: 4rem;
 }
 
 @media only screen and (min-width: 652px) {
