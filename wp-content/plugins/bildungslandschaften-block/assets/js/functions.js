@@ -1,17 +1,17 @@
 'use strict';
 
 jQuery( function( $ ) {
-	const $wrap = $( '.fancy-card-block' );
+	const $fancyWrap = $( '.fancy-card-block' );
 	let rectF, rectL, $fancyItem, firstItem, lastItem;
-	if ( $wrap.length ) {
-		$fancyItem = $wrap.find( '.fancy-card-item' );
+	if ( $fancyWrap.length ) {
+		$fancyItem = $fancyWrap.find( '.fancy-card-item' );
 		firstItem = $fancyItem[ 0 ];
 		lastItem = $fancyItem[ $fancyItem.length - 1 ];
 		rectF = firstItem.getBoundingClientRect();
 		rectL = lastItem.getBoundingClientRect();
 	}
 	const FancyCardItemEvent = () => {
-		if ( ! $wrap.length ) {
+		if ( ! $fancyWrap.length ) {
 			return;
 		}
 		const ww = window.innerWidth;
@@ -27,7 +27,7 @@ jQuery( function( $ ) {
 			if ( i === 0 ) {
 				return;
 			}
-			$( e ).css( 'transform', `translate3d(calc(120px * var(--item) - 120px - (${ tL }px * var(--item))), calc(150px * var(--item) - 150px), 0)` );
+			$( e ).css( 'transform', `translate3d(calc(120px * var(--item) - 120px - (${ tL / 5 }px * var(--item))), calc(150px * var(--item) - 150px), 0)` );
 
 			// if ( rect.left <= lF ) {
 			// 	$( e ).css( 'transform', 'translate3d(0px, calc(150px * var(--item) - 150px), 0)' );
@@ -38,12 +38,15 @@ jQuery( function( $ ) {
 	};
 
 	const FancyCard = () => {
-		if ( ! $wrap.length ) {
+		if ( ! $fancyWrap.length ) {
 			return;
 		}
-		$fancyItem = $wrap.find( '.fancy-card-item' );
+		$fancyItem = $fancyWrap.find( '.fancy-card-item' );
 		$fancyItem.on( 'click', function( e ) {
 			e.preventDefault();
+			if ( window.innerWidth < 992 ) {
+				return;
+			}
 
 			$( this ).toggleClass( '__active' ).siblings().removeClass( '__active' );
 			$fancyItem.css( {
@@ -59,11 +62,11 @@ jQuery( function( $ ) {
 		} );
 		$fancyItem.on( 'mouseenter', ( e ) => {
 			e.preventDefault();
-			$wrap.find( '.fancy-cards-wrap' ).addClass( '__hover' );
+			$fancyWrap.find( '.fancy-cards-wrap' ).addClass( '__hover' );
 		} );
 		$fancyItem.on( 'mouseleave', ( e ) => {
 			e.preventDefault();
-			$wrap.find( '.fancy-cards-wrap' ).removeClass( '__hover' );
+			$fancyWrap.find( '.fancy-cards-wrap' ).removeClass( '__hover' );
 		} );
 	};
 
@@ -74,6 +77,18 @@ jQuery( function( $ ) {
 		}
 		const $items = $wrapF.find( '.fancy-card-item' );
 		$wrapF.css( 'min-height', ( ( $items.length - 1 ) * 150 ) + 500 );
+
+		if ( window.innerWidth > 991 ) {
+			$items.removeClass( '__active' );
+			$items.css( { transform: '', width: '' } );
+			FancyCardItemEvent();
+		} else {
+			$items.addClass( '__active' );
+			$fancyItem.css( {
+				transform: 'translate3d(0px, calc(250px * var(--item) - 250px), 0)', width: '100%',
+			} );
+			$wrapF.css( 'min-height', ( ( $items.length - 1 ) * 250 ) + 500 );
+		}
 	};
 
 	const MapSelector = () => {
@@ -166,11 +181,11 @@ jQuery( function( $ ) {
 
 	$( window ).on( 'load', function() {
 		setHForFancyCardWrap();
-		FancyCardItemEvent();
+		//FancyCardItemEvent();
 	} );
 	$( window ).on( 'resize', function() {
 		setHForFancyCardWrap();
-		FancyCardItemEvent();
+		//FancyCardItemEvent();
 	} );
 
 	$( document ).ready( function() {
