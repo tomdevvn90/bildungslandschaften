@@ -320,7 +320,7 @@ const Edit = ( props ) => {
 						<div className="info-wrap">
 							<div className="btn-info-map-selector">
 								<a className="bild-btn" href="#" rel="noopener noreferrer" target="_blank">
-									<span className="bild-btn-text">Info Map Button</span>
+									<span className="bild-btn-text">{ listSelectors.length && listSelectors[ 0 ] || 'Info Map Button' }</span>
 									<span className="__icon">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.25 87.68"><g><path fill="transparent" stroke="currentColor" strokeMiterlimit="10" strokeWidth="2" d="m.71.71 43.13 43.13L.71 86.97" /></g></svg>
 									</span>

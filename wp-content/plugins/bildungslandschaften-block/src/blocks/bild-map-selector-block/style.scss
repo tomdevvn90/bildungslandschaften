@@ -123,6 +123,8 @@
 	.btn-info-map-selector {
 	  @extend %btn-style;
 	  margin-top: 30px;
+	  position: sticky;
+	  top: 200px;
 	}
   }
 
