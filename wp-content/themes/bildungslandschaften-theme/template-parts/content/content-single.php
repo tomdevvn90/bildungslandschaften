@@ -14,7 +14,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header alignwide text-center">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <?php get_template_part( 'template-parts/header/entry-header' ); ?>
+		<?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php twenty_twenty_one_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
