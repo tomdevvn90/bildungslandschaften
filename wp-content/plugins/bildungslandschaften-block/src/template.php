@@ -1,16 +1,18 @@
 <?php
 function bil_fancy_card_template( $atts, $content ) {
-	$a         = shortcode_atts( [
-			'className' => '',
-	], $atts );
-	$the_query = new WP_Query( [
+	$a         = shortcode_atts([
+			'className'  => '',
+			'numberCard' => 7,
+	], $atts);
+	$the_query = new WP_Query([
 			'post_type'      => 'project',
 			'post_status'    => 'publish',
-			'posts_per_page' => 5
-	] );
+			'posts_per_page' => $a['numberCard'] > 0 ? $a['numberCard'] : 5
+	]);
+	$num       = $the_query->found_posts < intval($a['numberCard']) ? $the_query->found_posts : intval($a['numberCard']);
 	ob_start();
 	?>
-	<div class="fancy-card-block <?= $a['className'] ?>">
+	<div class="fancy-card-block <?= $a['className'] ?>" style="min-height: <?= ($num - 1) * 150 + 500 ?>px">
 		<div class="fancy-cards-wrap">
 			<?php
 			if ( $the_query->have_posts() ) {

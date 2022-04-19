@@ -73,6 +73,10 @@ function bildungslandschaften_block_cgb_block_assets() { // phpcs:ignore
 			'editor_style'    => 'bildungslandschaften_block-cgb-block-editor-css',
 			'render_callback' => 'bil_fancy_card_template',
 			'attributes'      => array(
+				'numberCard' => array(
+					'type'    => 'number',
+					'default' => 7
+				),
 				'className' => array(
 					'type' => 'string',
 				),
