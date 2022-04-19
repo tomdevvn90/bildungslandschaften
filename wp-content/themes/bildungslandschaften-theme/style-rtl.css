@@ -5982,6 +5982,17 @@ footer {
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 30px 60px;
 	padding-right: 15px;
+	opacity: 0;
+	opacity: 0;
+	transition: all 1s cubic-bezier(0.9, 0, 0.5, 1.2);
+	transition-delay: 0.5s;
+	will-change: transform;
+	transition-delay: 1s;
+}
+
+.__loaded .posts-wrap {
+	opacity: 1;
+	transform: none;
 }
 @media only screen and (max-width: 821px) {
 
