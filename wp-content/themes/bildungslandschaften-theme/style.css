@@ -1715,8 +1715,8 @@ a:hover {
 }
 
 .site .button:hover,.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:hover,.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:hover,.site .button:active,.site .navigation-wrap .menu-container-wrap .menu_header .btn-toolbox:active,.navigation-wrap .menu-container-wrap .menu_header .site .btn-toolbox:active,button:hover,button:active,input[type=submit]:hover,input[type=submit]:active,input[type=reset]:hover,input[type=reset]:active,.wp-block-search .wp-block-search__button:hover,.wp-block-search .wp-block-search__button:active,.wp-block-button .wp-block-button__link:hover,.wp-block-button .wp-block-button__link:active,.wp-block-file a.wp-block-file__button:hover,.wp-block-file a.wp-block-file__button:active {
-	background-color: #28303d;
-	border-color: #28303d;
+	background-color: #cc681e;
+	border-color: #cc681e;
 	color: #fff;
 }
 

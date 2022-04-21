@@ -1875,8 +1875,8 @@ input[type=reset]:active,
 .wp-block-button .wp-block-button__link:active,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:active {
-	background-color: #28303d;
-	border-color: #28303d;
+	background-color: #cc681e;
+	border-color: #cc681e;
 	color: #fff;
 }
 

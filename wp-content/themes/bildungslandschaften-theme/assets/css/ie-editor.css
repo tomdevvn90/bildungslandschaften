@@ -352,8 +352,8 @@ a:hover {
 
 .wp-block-button__link:hover,
 .wp-block-button__link:active {
-	background-color: #28303d;
-	border-color: #28303d;
+	background-color: #cc681e;
+	border-color: #cc681e;
 	color: #fff;
 }
 
@@ -693,8 +693,8 @@ a:hover {
 
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-file .wp-block-file__button:active {
-	background-color: #28303d;
-	border-color: #28303d;
+	background-color: #cc681e;
+	border-color: #cc681e;
 	color: #fff;
 }
 
@@ -1811,8 +1811,8 @@ pre.wp-block-preformatted {
 
 .wp-block-search .wp-block-search__button.wp-block-search__button:hover,
 .wp-block-search .wp-block-search__button.wp-block-search__button:active {
-	background-color: #28303d;
-	border-color: #28303d;
+	background-color: #cc681e;
+	border-color: #cc681e;
 	color: #fff;
 }
 

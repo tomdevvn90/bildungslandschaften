@@ -74,6 +74,7 @@ $baseline-unit: 10px;
 	--global--color-red: #e4d1d1;
 	--global--color-orange: #e4dad1;
 	--global--color-yellow: #eeeadd;
+	--global--color-brown: #cc681e;
 	--global--color-white: #fff;
 	--global--color-white-50: rgba(255, 255, 255, 0.5); // Used for disabled buttons
 	--global--color-white-90: rgba(255, 255, 255, 0.9); // Used in form fields.
@@ -116,7 +117,7 @@ $baseline-unit: 10px;
 	--button--color-text-hover: var(--global--color-white);
 	--button--color-text-active: var(--global--color-white);
 	--button--color-background: var(--global--color-white);
-	--button--color-background-hover: var(--global--color-primary);
+	--button--color-background-hover: var(--global--color-brown);
 	--button--color-background-active: var(--global--color-white);
 	// Fonts
 	--button--font-family: var(--global--font-primary);
