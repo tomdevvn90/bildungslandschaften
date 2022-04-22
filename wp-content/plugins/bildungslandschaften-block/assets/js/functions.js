@@ -44,7 +44,8 @@ jQuery( function( $ ) {
 		$fancyItem = $fancyWrap.find( '.fancy-card-item' );
 		$fancyItem.on( 'click', function( e ) {
 			e.preventDefault();
-			if ( window.innerWidth < 992 ) {
+			if ( window.outerWidth < 992 ) {
+				$( this ).toggleClass( '__active' ).siblings().removeClass( '__active' );
 				return;
 			}
 
@@ -67,6 +68,7 @@ jQuery( function( $ ) {
 		$fancyItem.on( 'mouseleave', ( e ) => {
 			e.preventDefault();
 			$fancyWrap.find( '.fancy-cards-wrap' ).removeClass( '__hover' );
+			$fancyItem.removeClass( '__active' );
 		} );
 	};
 
@@ -78,12 +80,12 @@ jQuery( function( $ ) {
 		const $items = $wrapF.find( '.fancy-card-item' );
 		$wrapF.css( 'min-height', ( ( $items.length - 1 ) * 150 ) + 500 );
 
-		if ( window.innerWidth > 991 ) {
+		if ( window.outerWidth > 991 ) {
 			$items.removeClass( '__active' );
 			$items.css( { transform: '', width: '' } );
 			FancyCardItemEvent();
 		} else {
-			$items.addClass( '__active' );
+			//$items.addClass( '__active' );
 			$fancyItem.css( {
 				transform: 'translate3d(0px, calc(250px * var(--item) - 250px), 0)', width: '100%',
 			} );
